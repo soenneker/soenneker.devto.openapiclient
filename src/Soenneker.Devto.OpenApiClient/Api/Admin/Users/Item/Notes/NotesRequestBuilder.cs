@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Notes
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\admin\users\{-id}\notes
+    /// Builds and executes requests for operations under \api\admin\users\{id}\notes
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NotesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Notes
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NotesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/admin/users/{%2Did}/notes", pathParameters)
+        public NotesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/admin/users/{id}/notes", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Notes
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NotesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/admin/users/{%2Did}/notes", rawUrl)
+        public NotesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/admin/users/{id}/notes", rawUrl)
         {
         }
         /// <summary>
@@ -59,11 +59,11 @@ namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Notes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByUserIdNotesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByIdNotesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByUserIdNotesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByIdNotesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -96,11 +96,11 @@ namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Notes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByUserIdNotesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByIdNotesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByUserIdNotesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByIdNotesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

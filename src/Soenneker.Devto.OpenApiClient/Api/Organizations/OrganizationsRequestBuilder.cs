@@ -20,14 +20,14 @@ namespace Soenneker.Devto.OpenApiClient.Api.Organizations
     {
         /// <summary>Gets an item from the Soenneker.Devto.OpenApiClient.api.organizations.item collection</summary>
         /// <param name="position">The unique slugified username of the organization (e.g. `github`).</param>
-        /// <returns>A <see cref="global::Soenneker.Devto.OpenApiClient.Api.Organizations.Item.OrganizationIdOrUsernameItemRequestBuilder"/></returns>
-        public global::Soenneker.Devto.OpenApiClient.Api.Organizations.Item.OrganizationIdOrUsernameItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Devto.OpenApiClient.Api.Organizations.Item.WithUsernameItemRequestBuilder"/></returns>
+        public global::Soenneker.Devto.OpenApiClient.Api.Organizations.Item.WithUsernameItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("organizationIdOrUsername%2Did", position);
-                return new global::Soenneker.Devto.OpenApiClient.Api.Organizations.Item.OrganizationIdOrUsernameItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("username", position);
+                return new global::Soenneker.Devto.OpenApiClient.Api.Organizations.Item.WithUsernameItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

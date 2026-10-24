@@ -11,7 +11,7 @@ using System;
 namespace Soenneker.Devto.OpenApiClient.Api.Articles.Item.Unpublish
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\articles\{-id}\unpublish
+    /// Builds and executes requests for operations under \api\articles\{id}\unpublish
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UnpublishRequestBuilder : BaseRequestBuilder
@@ -21,7 +21,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Articles.Item.Unpublish
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UnpublishRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/articles/{%2Did}/unpublish{?note*}", pathParameters)
+        public UnpublishRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/articles/{id}/unpublish{?note*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Articles.Item.Unpublish
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UnpublishRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/articles/{%2Did}/unpublish{?note*}", rawUrl)
+        public UnpublishRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/articles/{id}/unpublish{?note*}", rawUrl)
         {
         }
         /// <summary>

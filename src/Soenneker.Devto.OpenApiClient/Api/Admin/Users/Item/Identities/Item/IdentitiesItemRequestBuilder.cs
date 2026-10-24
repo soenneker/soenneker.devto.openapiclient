@@ -11,7 +11,7 @@ using System;
 namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Identities.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\admin\users\{-id}\identities\{id}
+    /// Builds and executes requests for operations under \api\admin\users\{id}\identities\{id2}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IdentitiesItemRequestBuilder : BaseRequestBuilder
@@ -21,7 +21,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Identities.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IdentitiesItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/admin/users/{%2Did}/identities/{id}", pathParameters)
+        public IdentitiesItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/admin/users/{id}/identities/{id2}", pathParameters)
         {
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Identities.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IdentitiesItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/admin/users/{%2Did}/identities/{id}", rawUrl)
+        public IdentitiesItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/admin/users/{id}/identities/{id2}", rawUrl)
         {
         }
         /// <summary>

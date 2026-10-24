@@ -14,10 +14,10 @@ using System;
 namespace Soenneker.Devto.OpenApiClient.Api.Organizations.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\organizations\{organizationIdOrUsername-id}
+    /// Builds and executes requests for operations under \api\organizations\{username}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class OrganizationIdOrUsernameItemRequestBuilder : BaseRequestBuilder
+    public partial class WithUsernameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The articles property</summary>
         public global::Soenneker.Devto.OpenApiClient.Api.Organizations.Item.Articles.ArticlesRequestBuilder Articles
@@ -30,19 +30,19 @@ namespace Soenneker.Devto.OpenApiClient.Api.Organizations.Item
             get => new global::Soenneker.Devto.OpenApiClient.Api.Organizations.Item.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Api.Organizations.Item.OrganizationIdOrUsernameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Api.Organizations.Item.WithUsernameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationIdOrUsernameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/organizations/{organizationIdOrUsername%2Did}", pathParameters)
+        public WithUsernameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/organizations/{username}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Api.Organizations.Item.OrganizationIdOrUsernameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Api.Organizations.Item.WithUsernameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationIdOrUsernameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/organizations/{organizationIdOrUsername%2Did}", rawUrl)
+        public WithUsernameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/organizations/{username}", rawUrl)
         {
         }
         /// <summary>
@@ -64,23 +64,22 @@ namespace Soenneker.Devto.OpenApiClient.Api.Organizations.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve public profile information for a single organization by its username.### Integration Tip:- Bypasses authentication.- Returns details like Tech Stack, Tagline, Story, website URLs, and joined date.
+        /// Retrieve public profile information for a single organization by its username.### Integration Tip:- Bypasses authentication.- Returns details like Tech Stack, Tagline, Story, website URLs, and joined date.This endpoint allows the client to retrieve a single organization by their id
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Devto.OpenApiClient.Models.Organization&gt;</returns>
+        /// <returns>A <see cref="global::Soenneker.Devto.OpenApiClient.Models.GetOrganization200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Devto.OpenApiClient.Models.Organization>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Devto.OpenApiClient.Models.GetOrganization200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Devto.OpenApiClient.Models.Organization>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Devto.OpenApiClient.Models.GetOrganization200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Devto.OpenApiClient.Models.Organization>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.Organization.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-            return collectionResult?.AsList();
+            return await RequestAdapter.SendAsync<global::Soenneker.Devto.OpenApiClient.Models.GetOrganization200Response>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.GetOrganization200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This endpoint allows the client to update an existing organization.
@@ -121,7 +120,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Organizations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve public profile information for a single organization by its username.### Integration Tip:- Bypasses authentication.- Returns details like Tech Stack, Tagline, Story, website URLs, and joined date.
+        /// Retrieve public profile information for a single organization by its username.### Integration Tip:- Bypasses authentication.- Returns details like Tech Stack, Tagline, Story, website URLs, and joined date.This endpoint allows the client to retrieve a single organization by their id
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -163,11 +162,11 @@ namespace Soenneker.Devto.OpenApiClient.Api.Organizations.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Devto.OpenApiClient.Api.Organizations.Item.OrganizationIdOrUsernameItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Devto.OpenApiClient.Api.Organizations.Item.WithUsernameItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Devto.OpenApiClient.Api.Organizations.Item.OrganizationIdOrUsernameItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Devto.OpenApiClient.Api.Organizations.Item.WithUsernameItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Devto.OpenApiClient.Api.Organizations.Item.OrganizationIdOrUsernameItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Devto.OpenApiClient.Api.Organizations.Item.WithUsernameItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

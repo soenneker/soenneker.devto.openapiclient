@@ -20,14 +20,14 @@ namespace Soenneker.Devto.OpenApiClient.Api.Trends
     {
         /// <summary>Gets an item from the Soenneker.Devto.OpenApiClient.api.trends.item collection</summary>
         /// <param name="position">The ID or slug of the trend to retrieve.</param>
-        /// <returns>A <see cref="global::Soenneker.Devto.OpenApiClient.Api.Trends.Item.IdOrSlugItemRequestBuilder"/></returns>
-        public global::Soenneker.Devto.OpenApiClient.Api.Trends.Item.IdOrSlugItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Devto.OpenApiClient.Api.Trends.Item.WithIdOrSlugItemRequestBuilder"/></returns>
+        public global::Soenneker.Devto.OpenApiClient.Api.Trends.Item.WithIdOrSlugItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("idOrSlug%2Did", position);
-                return new global::Soenneker.Devto.OpenApiClient.Api.Trends.Item.IdOrSlugItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("idOrSlug", position);
+                return new global::Soenneker.Devto.OpenApiClient.Api.Trends.Item.WithIdOrSlugItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Devto.OpenApiClient.Api.Organizations.Item.Users
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\organizations\{organizationIdOrUsername-id}\users
+    /// Builds and executes requests for operations under \api\organizations\{username}\users
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsersRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Organizations.Item.Users
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/organizations/{organizationIdOrUsername%2Did}/users{?page*,per_page*}", pathParameters)
+        public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/organizations/{username}/users{?page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Organizations.Item.Users
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/organizations/{organizationIdOrUsername%2Did}/users{?page*,per_page*}", rawUrl)
+        public UsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/organizations/{username}/users{?page*,per_page*}", rawUrl)
         {
         }
         /// <summary>

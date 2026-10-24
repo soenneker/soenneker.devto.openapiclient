@@ -13,10 +13,10 @@ using System;
 namespace Soenneker.Devto.OpenApiClient.Api.Trends.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\trends\{idOrSlug-id}
+    /// Builds and executes requests for operations under \api\trends\{idOrSlug}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class IdOrSlugItemRequestBuilder : BaseRequestBuilder
+    public partial class WithIdOrSlugItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The articles property</summary>
         public global::Soenneker.Devto.OpenApiClient.Api.Trends.Item.Articles.ArticlesRequestBuilder Articles
@@ -24,19 +24,19 @@ namespace Soenneker.Devto.OpenApiClient.Api.Trends.Item
             get => new global::Soenneker.Devto.OpenApiClient.Api.Trends.Item.Articles.ArticlesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Api.Trends.Item.IdOrSlugItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Api.Trends.Item.WithIdOrSlugItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IdOrSlugItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/trends/{idOrSlug%2Did}", pathParameters)
+        public WithIdOrSlugItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/trends/{idOrSlug}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Api.Trends.Item.IdOrSlugItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Api.Trends.Item.WithIdOrSlugItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IdOrSlugItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/trends/{idOrSlug%2Did}", rawUrl)
+        public WithIdOrSlugItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/trends/{idOrSlug}", rawUrl)
         {
         }
         /// <summary>
@@ -80,11 +80,11 @@ namespace Soenneker.Devto.OpenApiClient.Api.Trends.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Devto.OpenApiClient.Api.Trends.Item.IdOrSlugItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Devto.OpenApiClient.Api.Trends.Item.WithIdOrSlugItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Devto.OpenApiClient.Api.Trends.Item.IdOrSlugItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Devto.OpenApiClient.Api.Trends.Item.WithIdOrSlugItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Devto.OpenApiClient.Api.Trends.Item.IdOrSlugItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Devto.OpenApiClient.Api.Trends.Item.WithIdOrSlugItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

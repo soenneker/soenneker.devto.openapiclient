@@ -14,10 +14,10 @@ using System;
 namespace Soenneker.Devto.OpenApiClient.Api.Articles.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\articles\{-id}
+    /// Builds and executes requests for operations under \api\articles\{id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ItemRequestBuilder : BaseRequestBuilder
+    public partial class ArticlesItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The unpublish property</summary>
         public global::Soenneker.Devto.OpenApiClient.Api.Articles.Item.Unpublish.UnpublishRequestBuilder Unpublish
@@ -37,19 +37,19 @@ namespace Soenneker.Devto.OpenApiClient.Api.Articles.Item
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Api.Articles.Item.ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Api.Articles.Item.ArticlesItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/articles/{%2Did}", pathParameters)
+        public ArticlesItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/articles/{id}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Api.Articles.Item.ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Api.Articles.Item.ArticlesItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/articles/{%2Did}", rawUrl)
+        public ArticlesItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/articles/{id}", rawUrl)
         {
         }
         /// <summary>
@@ -134,11 +134,11 @@ namespace Soenneker.Devto.OpenApiClient.Api.Articles.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Devto.OpenApiClient.Api.Articles.Item.ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Devto.OpenApiClient.Api.Articles.Item.ArticlesItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Devto.OpenApiClient.Api.Articles.Item.ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Devto.OpenApiClient.Api.Articles.Item.ArticlesItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Devto.OpenApiClient.Api.Articles.Item.ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Devto.OpenApiClient.Api.Articles.Item.ArticlesItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

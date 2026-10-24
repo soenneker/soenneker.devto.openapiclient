@@ -38,14 +38,14 @@ namespace Soenneker.Devto.OpenApiClient.Api.Articles
         }
         /// <summary>Gets an item from the Soenneker.Devto.OpenApiClient.api.articles.item collection</summary>
         /// <param name="position">The unique numerical ID of the published article.</param>
-        /// <returns>A <see cref="global::Soenneker.Devto.OpenApiClient.Api.Articles.Item.ItemRequestBuilder"/></returns>
-        public global::Soenneker.Devto.OpenApiClient.Api.Articles.Item.ItemRequestBuilder this[int position]
+        /// <returns>A <see cref="global::Soenneker.Devto.OpenApiClient.Api.Articles.Item.ArticlesItemRequestBuilder"/></returns>
+        public global::Soenneker.Devto.OpenApiClient.Api.Articles.Item.ArticlesItemRequestBuilder this[int position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("%2Did", position);
-                return new global::Soenneker.Devto.OpenApiClient.Api.Articles.Item.ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("id", position);
+                return new global::Soenneker.Devto.OpenApiClient.Api.Articles.Item.ArticlesItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

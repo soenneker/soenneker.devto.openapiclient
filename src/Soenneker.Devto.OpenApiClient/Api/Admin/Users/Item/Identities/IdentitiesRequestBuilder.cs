@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Identities
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\admin\users\{-id}\identities
+    /// Builds and executes requests for operations under \api\admin\users\{id}\identities
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IdentitiesRequestBuilder : BaseRequestBuilder
@@ -26,7 +26,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Identities
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("id", position);
+                urlTplParams.Add("id2", position);
                 return new global::Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Identities.Item.IdentitiesItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
@@ -35,7 +35,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Identities
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IdentitiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/admin/users/{%2Did}/identities", pathParameters)
+        public IdentitiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/admin/users/{id}/identities", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Identities
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IdentitiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/admin/users/{%2Did}/identities", rawUrl)
+        public IdentitiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/admin/users/{id}/identities", rawUrl)
         {
         }
         /// <summary>
@@ -72,11 +72,11 @@ namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Identities
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByUserIdIdentitiesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByIdIdentitiesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByUserIdIdentitiesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByIdIdentitiesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -109,11 +109,11 @@ namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Identities
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByUserIdIdentitiesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByIdIdentitiesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByUserIdIdentitiesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByIdIdentitiesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

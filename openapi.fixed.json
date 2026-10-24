@@ -725,7 +725,7 @@
         }
       }
     },
-    "/api/articles/{username}/{slug}": {
+    "/api/articles/{id}/{slug}": {
       "get": {
         "tags": [
           "articles"
@@ -735,7 +735,7 @@
         "operationId": "GetArticleByPath",
         "parameters": [
           {
-            "name": "username",
+            "name": "id",
             "in": "path",
             "description": "The username of the article\u0027s author or organization.",
             "required": true,
@@ -2392,8 +2392,8 @@
         "tags": [
           "organizations"
         ],
-        "summary": "An organization (by username)",
-        "description": "Retrieve public profile information for a single organization by its username.\n\n### Integration Tip:\n- Bypasses authentication.\n- Returns details like Tech Stack, Tagline, Story, website URLs, and joined date.",
+        "summary": "An organization (by username)\n\nAn organization (by id)",
+        "description": "Retrieve public profile information for a single organization by its username.\n\n### Integration Tip:\n- Bypasses authentication.\n- Returns details like Tech Stack, Tagline, Story, website URLs, and joined date.\n\nThis endpoint allows the client to retrieve a single organization by their id",
         "operationId": "GetOrganization",
         "parameters": [
           {
@@ -2402,7 +2402,14 @@
             "description": "The unique slugified username of the organization (e.g. \u0060github\u0060).",
             "required": true,
             "schema": {
-              "type": "string"
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
             }
           }
         ],
@@ -2412,7 +2419,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetOrganization200ResponseSchema"
+                  "$ref": "#/components/schemas/GetOrganization200Response"
                 }
               }
             }
@@ -2421,7 +2428,24 @@
             "description": "Not Found"
           }
         },
-        "security": []
+        "security": [
+          {},
+          {}
+        ],
+        "servers": [
+          {
+            "url": "https://dev.to",
+            "description": "Production server"
+          },
+          {
+            "url": "https://dev.to",
+            "description": "Production server"
+          }
+        ],
+        "x-original-operation-ids": [
+          "getOrganization",
+          "getOrganizationById"
+        ]
       },
       "put": {
         "tags": [
@@ -2467,7 +2491,13 @@
           "422": {
             "description": "Unprocessable Entity"
           }
-        }
+        },
+        "servers": [
+          {
+            "url": "https://dev.to",
+            "description": "Production server"
+          }
+        ]
       },
       "delete": {
         "tags": [
@@ -2497,10 +2527,16 @@
           "401": {
             "description": "unauthorized"
           }
-        }
+        },
+        "servers": [
+          {
+            "url": "https://dev.to",
+            "description": "Production server"
+          }
+        ]
       }
     },
-    "/api/organizations/{organizationIdOrUsername}/users": {
+    "/api/organizations/{username}/users": {
       "get": {
         "tags": [
           "organizations",
@@ -2511,7 +2547,7 @@
         "operationId": "GetOrgUsers",
         "parameters": [
           {
-            "name": "organizationIdOrUsername",
+            "name": "username",
             "in": "path",
             "description": "The organization\u0027s numerical ID or string username.",
             "required": true,
@@ -2544,7 +2580,7 @@
         "security": []
       }
     },
-    "/api/organizations/{organizationIdOrUsername}/articles": {
+    "/api/organizations/{username}/articles": {
       "get": {
         "tags": [
           "organizations",
@@ -2555,7 +2591,7 @@
         "operationId": "GetOrgArticles",
         "parameters": [
           {
-            "name": "organizationIdOrUsername",
+            "name": "username",
             "in": "path",
             "description": "The organization\u0027s numerical ID or string username.",
             "required": true,
@@ -3659,7 +3695,7 @@
         "security": []
       }
     },
-    "/api/trends/{trendIdOrSlug}/articles": {
+    "/api/trends/{idOrSlug}/articles": {
       "get": {
         "tags": [
           "trends"
@@ -3669,7 +3705,7 @@
         "operationId": "GetTrendArticles",
         "parameters": [
           {
-            "name": "trendIdOrSlug",
+            "name": "idOrSlug",
             "in": "path",
             "description": "The ID or slug of the trend to retrieve articles for.",
             "required": true,
@@ -4347,7 +4383,7 @@
         }
       }
     },
-    "/api/admin/users/{userId}/notes": {
+    "/api/admin/users/{id}/notes": {
       "get": {
         "tags": [
           "users",
@@ -4355,10 +4391,10 @@
         ],
         "summary": "List notes for a user (Admin)",
         "description": "Retrieve all moderator/administrator audit log notes appended to a user. Requires Super Admin credentials.",
-        "operationId": "GetApiAdminUsersByUserIdNotes",
+        "operationId": "GetApiAdminUsersByIdNotes",
         "parameters": [
           {
-            "name": "userId",
+            "name": "id",
             "in": "path",
             "description": "User ID to fetch notes for.",
             "required": true,
@@ -4380,10 +4416,10 @@
         ],
         "summary": "Add a note to a user (Admin)",
         "description": "Add a new moderation/audit note to a user.\n\n### Audit Logging Guidelines:\n- **content**: Plaintext description of behavior, infraction, or actions taken.\n- **reason**: Categorized classification (e.g. \u0060spam\u0060, \u0060abuse\u0060, \u0060harassment\u0060, \u0060administrative\u0060).\n- Requires Super Admin credentials.",
-        "operationId": "PostApiAdminUsersByUserIdNotes",
+        "operationId": "PostApiAdminUsersByIdNotes",
         "parameters": [
           {
-            "name": "userId",
+            "name": "id",
             "in": "path",
             "description": "User ID to append the note to.",
             "required": true,
@@ -4397,7 +4433,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PostApiAdminUsersByUserIdNotesRequest"
+                "$ref": "#/components/schemas/PostApiAdminUsersByIdNotesRequest"
               }
             }
           }
@@ -4409,7 +4445,7 @@
         }
       }
     },
-    "/api/admin/users/{userId}/identities": {
+    "/api/admin/users/{id}/identities": {
       "get": {
         "tags": [
           "users",
@@ -4417,10 +4453,10 @@
         ],
         "summary": "List identities for a user (Admin)",
         "description": "Retrieve all linked OAuth identities (e.g., GitHub, Twitter, Apple) for a user. Requires Super Admin credentials.",
-        "operationId": "GetApiAdminUsersByUserIdIdentities",
+        "operationId": "GetApiAdminUsersByIdIdentities",
         "parameters": [
           {
-            "name": "userId",
+            "name": "id",
             "in": "path",
             "description": "User ID to fetch linked identities for.",
             "required": true,
@@ -4442,10 +4478,10 @@
         ],
         "summary": "Link an identity to a user (Admin)",
         "description": "Manually link an OAuth provider identity to a user. Requires Super Admin credentials.\n\n### Identity Binding:\n- **provider**: The login provider name (e.g. \u0060github\u0060, \u0060twitter\u0060).\n- **uid**: The provider\u0027s unique user identifier.\n- **username**: The user\u0027s username on the provider\u0027s service.",
-        "operationId": "PostApiAdminUsersByUserIdIdentities",
+        "operationId": "PostApiAdminUsersByIdIdentities",
         "parameters": [
           {
-            "name": "userId",
+            "name": "id",
             "in": "path",
             "description": "User ID to bind identity to.",
             "required": true,
@@ -4459,7 +4495,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PostApiAdminUsersByUserIdIdentitiesRequest"
+                "$ref": "#/components/schemas/PostApiAdminUsersByIdIdentitiesRequest"
               }
             }
           }
@@ -4471,7 +4507,7 @@
         }
       }
     },
-    "/api/admin/users/{userId}/identities/{id}": {
+    "/api/admin/users/{id}/identities/{id2}": {
       "delete": {
         "tags": [
           "users",
@@ -4479,10 +4515,10 @@
         ],
         "summary": "Unlink an identity from a user (Admin)",
         "description": "Unlink a specific OAuth login provider identity from a user by identity ID. Requires Super Admin credentials.",
-        "operationId": "DeleteApiAdminUsersByUserIdIdentitiesById",
+        "operationId": "DeleteApiAdminUsersByIdIdentitiesById2",
         "parameters": [
           {
-            "name": "userId",
+            "name": "id",
             "in": "path",
             "description": "User ID.",
             "required": true,
@@ -4491,7 +4527,7 @@
             }
           },
           {
-            "name": "id",
+            "name": "id2",
             "in": "path",
             "description": "Identity ID to unlink.",
             "required": true,
@@ -6545,10 +6581,20 @@
         }
       },
       "GetOrganization200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Organization"
-        }
+        "anyOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Organization"
+            }
+          },
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Organization"
+            }
+          }
+        ]
       },
       "GetOrgUsers200Response": {
         "type": "array",
@@ -6831,7 +6877,7 @@
           }
         }
       },
-      "PostApiAdminUsersByUserIdNotesRequest": {
+      "PostApiAdminUsersByIdNotesRequest": {
         "required": [
           "content"
         ],
@@ -6845,7 +6891,7 @@
           }
         }
       },
-      "PostApiAdminUsersByUserIdIdentitiesRequest": {
+      "PostApiAdminUsersByIdIdentitiesRequest": {
         "required": [
           "provider",
           "uid"
@@ -7047,12 +7093,6 @@
           "$ref": "#/components/schemas/GetFollowers200ResponseSchemaItem"
         }
       },
-      "GetOrganization200ResponseSchema": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Organization"
-        }
-      },
       "GetOrgUsers200ResponseSchema": {
         "type": "array",
         "items": {
@@ -7174,11 +7214,13 @@
         }
       },
       "PageSocialImageProperty": {
-        "type": "object"
+        "type": "object",
+        "nullable": true
       },
       "AgentSessionShowMetadataProperty": {
         "type": "object",
-        "description": "Session metadata (tool-specific)"
+        "description": "Session metadata (tool-specific)",
+        "nullable": true
       },
       "AgentSessionShowMessagesItemProperty": {
         "type": "object"
@@ -7447,7 +7489,6 @@
           "txt"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Controls what kind of layout the page is rendered in",
         "x-ms-enum": {
           "name": "PageTemplate",
@@ -7502,7 +7543,6 @@
           "digest_second"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Identifies which area of site layout the ad can appear in",
         "x-ms-enum": {
           "name": "BillboardPlacementArea",
@@ -7599,7 +7639,6 @@
           "experience5"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Specifies a group of users who will see this billboard (must match audience_segment_id if both provided)",
         "x-ms-enum": {
           "name": "BillboardAudienceSegmentType",
@@ -7663,7 +7702,6 @@
           "logged_out"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Potentially limits visitors to whom the ad is visible",
         "x-ms-enum": {
           "name": "BillboardDisplayTo",
@@ -7691,7 +7729,6 @@
           "external"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Types of the billboards:\nin_house (created by admins),\ncommunity (created by an entity, appears on entity\u0027s content),\nexternal ( created by an entity, or a non-entity, can appear everywhere)\n",
         "x-ms-enum": {
           "name": "BillboardTypeOf",
@@ -7717,7 +7754,6 @@
           "manual"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Marks the segment as manually managed (other types are internal)",
         "x-ms-enum": {
           "name": "ManualTypeOf",
@@ -7735,7 +7771,6 @@
           "poll_option"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Resource discriminator",
         "x-ms-enum": {
           "name": "PollOptionTypeOf",
@@ -7753,7 +7788,6 @@
           "poll"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Resource discriminator",
         "x-ms-enum": {
           "name": "PollTypeOf",
@@ -7774,7 +7808,6 @@
           "text_input"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Poll question type: single_choice, multiple_choice, scale, or text_input",
         "x-ms-enum": {
           "name": "PollPollTypeOf",
@@ -7804,7 +7837,6 @@
           "survey"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Resource discriminator",
         "x-ms-enum": {
           "name": "SurveyTypeOf",
@@ -7824,7 +7856,6 @@
           "fun"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Survey category",
         "x-ms-enum": {
           "name": "SurveySurveyTypeOf",
@@ -7850,7 +7881,6 @@
           "poll_vote"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Resource discriminator",
         "x-ms-enum": {
           "name": "PollVoteTypeOf",
@@ -7868,7 +7898,6 @@
           "poll_text_response"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Resource discriminator",
         "x-ms-enum": {
           "name": "PollTextResponseTypeOf",
@@ -7891,7 +7920,6 @@
           "pi"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Tool that produced the session (e.g. claude_code, codex).",
         "x-ms-enum": {
           "name": "CreateAgentSessionRequestToolName",
@@ -7934,7 +7962,6 @@
           "txt"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Controls what kind of layout the page is rendered in",
         "x-ms-enum": {
           "name": "PostApiPagesRequestTemplate",
@@ -7974,7 +8001,6 @@
           "all"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "GetArticlesStateParameter",
           "modelAsString": false,
@@ -8003,7 +8029,6 @@
           "fire"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "PostApiReactionsToggleCategoryParameter",
           "modelAsString": false,
@@ -8037,8 +8062,7 @@
           "Article",
           "User"
         ],
-        "type": "string",
-        "additionalProperties": false
+        "type": "string"
       },
       "PostApiReactionsCategoryParameter": {
         "enum": [
@@ -8049,7 +8073,6 @@
           "fire"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "PostApiReactionsCategoryParameter",
           "modelAsString": false,
@@ -8083,8 +8106,7 @@
           "Article",
           "User"
         ],
-        "type": "string",
-        "additionalProperties": false
+        "type": "string"
       }
     },
     "parameters": {

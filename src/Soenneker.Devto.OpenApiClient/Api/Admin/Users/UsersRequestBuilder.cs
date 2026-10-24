@@ -26,14 +26,14 @@ namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users
         }
         /// <summary>Gets an item from the Soenneker.Devto.OpenApiClient.api.admin.users.item collection</summary>
         /// <param name="position">Unique user numeric ID.</param>
-        /// <returns>A <see cref="global::Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.ItemRequestBuilder"/></returns>
-        public global::Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.ItemRequestBuilder this[int position]
+        /// <returns>A <see cref="global::Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.UsersItemRequestBuilder"/></returns>
+        public global::Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.UsersItemRequestBuilder this[int position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("%2Did", position);
-                return new global::Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("id", position);
+                return new global::Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.UsersItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

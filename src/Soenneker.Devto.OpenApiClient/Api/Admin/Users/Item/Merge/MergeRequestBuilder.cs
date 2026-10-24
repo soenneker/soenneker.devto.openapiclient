@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Merge
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\admin\users\{-id}\merge
+    /// Builds and executes requests for operations under \api\admin\users\{id}\merge
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MergeRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Merge
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MergeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/admin/users/{%2Did}/merge", pathParameters)
+        public MergeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/admin/users/{id}/merge", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Merge
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MergeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/admin/users/{%2Did}/merge", rawUrl)
+        public MergeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/admin/users/{id}/merge", rawUrl)
         {
         }
         /// <summary>

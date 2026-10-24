@@ -9,51 +9,43 @@ namespace Soenneker.Devto.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PostApiAdminUsersByUserIdIdentitiesRequest : IAdditionalDataHolder, IParsable
+    public partial class PostApiAdminUsersByIdNotesRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The provider property</summary>
+        /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Provider { get; set; }
+        public string? Content { get; set; }
 #nullable restore
 #else
-        public string Provider { get; set; }
+        public string Content { get; set; }
 #endif
-        /// <summary>The uid property</summary>
+        /// <summary>The reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uid { get; set; }
+        public string? Reason { get; set; }
 #nullable restore
 #else
-        public string Uid { get; set; }
-#endif
-        /// <summary>The username property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Username { get; set; }
-#nullable restore
-#else
-        public string Username { get; set; }
+        public string Reason { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByUserIdIdentitiesRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByIdNotesRequest"/> and sets the default values.
         /// </summary>
-        public PostApiAdminUsersByUserIdIdentitiesRequest()
+        public PostApiAdminUsersByIdNotesRequest()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByUserIdIdentitiesRequest"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByIdNotesRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByUserIdIdentitiesRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByIdNotesRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByUserIdIdentitiesRequest();
+            return new global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByIdNotesRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,9 +55,8 @@ namespace Soenneker.Devto.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "provider", n => { Provider = n.GetStringValue(); } },
-                { "uid", n => { Uid = n.GetStringValue(); } },
-                { "username", n => { Username = n.GetStringValue(); } },
+                { "content", n => { Content = n.GetStringValue(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +66,8 @@ namespace Soenneker.Devto.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("provider", Provider);
-            writer.WriteStringValue("uid", Uid);
-            writer.WriteStringValue("username", Username);
+            writer.WriteStringValue("content", Content);
+            writer.WriteStringValue("reason", Reason);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

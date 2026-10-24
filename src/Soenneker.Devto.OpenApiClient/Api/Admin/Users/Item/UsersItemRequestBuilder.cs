@@ -18,10 +18,10 @@ using System;
 namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\admin\users\{-id}
+    /// Builds and executes requests for operations under \api\admin\users\{id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ItemRequestBuilder : BaseRequestBuilder
+    public partial class UsersItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The email property</summary>
         public global::Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Email.EmailRequestBuilder Email
@@ -54,19 +54,19 @@ namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item
             get => new global::Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Status.StatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.UsersItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/admin/users/{%2Did}", pathParameters)
+        public UsersItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/admin/users/{id}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.UsersItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/admin/users/{%2Did}", rawUrl)
+        public UsersItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/admin/users/{id}", rawUrl)
         {
         }
         /// <summary>
@@ -149,11 +149,11 @@ namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.UsersItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.UsersItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.UsersItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

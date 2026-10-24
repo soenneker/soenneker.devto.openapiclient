@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Devto.OpenApiClient.Api.Trends.Item.Articles
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\trends\{idOrSlug-id}\articles
+    /// Builds and executes requests for operations under \api\trends\{idOrSlug}\articles
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ArticlesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Trends.Item.Articles
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ArticlesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/trends/{idOrSlug%2Did}/articles{?page*,per_page*}", pathParameters)
+        public ArticlesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/trends/{idOrSlug}/articles{?page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Trends.Item.Articles
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ArticlesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/trends/{idOrSlug%2Did}/articles{?page*,per_page*}", rawUrl)
+        public ArticlesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/trends/{idOrSlug}/articles{?page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
