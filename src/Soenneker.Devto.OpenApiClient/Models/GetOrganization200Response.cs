@@ -30,7 +30,7 @@ namespace Soenneker.Devto.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Devto.OpenApiClient.Models.GetOrganization200Response();
-            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Devto.OpenApiClient.Models.Organization>(global::Soenneker.Devto.OpenApiClient.Models.Organization.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Devto.OpenApiClient.Models.Organization> organizationValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Devto.OpenApiClient.Models.Organization>(global::Soenneker.Devto.OpenApiClient.Models.Organization.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Devto.OpenApiClient.Models.Organization> organizationValue)
             {
                 result.Organization = organizationValue;
             }
