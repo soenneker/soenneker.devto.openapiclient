@@ -12,71 +12,115 @@ namespace Soenneker.Devto.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Billboard : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("approved") is { } nullNodeApproved && nullNodeApproved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Approved = null;
+            if (parseNode.GetChildNode("audience_segment_id") is { } nullNodeAudienceSegmentId && nullNodeAudienceSegmentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudienceSegmentId = null;
+            if (parseNode.GetChildNode("audience_segment_type") is { } nullNodeAudienceSegmentType && nullNodeAudienceSegmentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudienceSegmentType = null;
+            if (parseNode.GetChildNode("body_markdown") is { } nullNodeBodyMarkdown && nullNodeBodyMarkdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BodyMarkdown = null;
+            if (parseNode.GetChildNode("creator_id") is { } nullNodeCreatorId && nullNodeCreatorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatorId = null;
+            if (parseNode.GetChildNode("display_to") is { } nullNodeDisplayTo && nullNodeDisplayTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayTo = null;
+            if (parseNode.GetChildNode("exclude_article_ids") is { } nullNodeExcludeArticleIds && nullNodeExcludeArticleIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeArticleIds = null;
+            if (parseNode.GetChildNode("expires_at") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("organization_id") is { } nullNodeOrganizationId && nullNodeOrganizationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationId = null;
+            if (parseNode.GetChildNode("placement_area") is { } nullNodePlacementArea && nullNodePlacementArea.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlacementArea = null;
+            if (parseNode.GetChildNode("published") is { } nullNodePublished && nullNodePublished.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Published = null;
+            if (parseNode.GetChildNode("tag_list") is { } nullNodeTagList && nullNodeTagList.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TagList = null;
+            if (parseNode.GetChildNode("target_geolocations") is { } nullNodeTargetGeolocations && nullNodeTargetGeolocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetGeolocations = null;
+            if (parseNode.GetChildNode("type_of") is { } nullNodeTypeOf && nullNodeTypeOf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TypeOf = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Ad must be both published and approved to be in rotation</summary>
-        public bool? Approved { get; set; }
+        public bool? Approved { get => _explicitNullValueApproved; set { _explicitNullValueApproved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approved"); else _explicitNullProperties?.Remove("approved"); } }
+        private bool? _explicitNullValueApproved = default!;
         /// <summary>Specifies a specific audience segment who will see this billboard</summary>
-        public int? AudienceSegmentId { get; set; }
+        public int? AudienceSegmentId { get => _explicitNullValueAudienceSegmentId; set { _explicitNullValueAudienceSegmentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audience_segment_id"); else _explicitNullProperties?.Remove("audience_segment_id"); } }
+        private int? _explicitNullValueAudienceSegmentId = default!;
         /// <summary>Specifies a group of users who will see this billboard (must match audience_segment_id if both provided)</summary>
-        public global::Soenneker.Devto.OpenApiClient.Models.BillboardAudienceSegmentType? AudienceSegmentType { get; set; }
+        public global::Soenneker.Devto.OpenApiClient.Models.BillboardAudienceSegmentType? AudienceSegmentType { get => _explicitNullValueAudienceSegmentType; set { _explicitNullValueAudienceSegmentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audience_segment_type"); else _explicitNullProperties?.Remove("audience_segment_type"); } }
+        private global::Soenneker.Devto.OpenApiClient.Models.BillboardAudienceSegmentType? _explicitNullValueAudienceSegmentType = default!;
         /// <summary>The text (in markdown) of the ad (required)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BodyMarkdown { get; set; }
+        public string? BodyMarkdown { get => _explicitNullValueBodyMarkdown; set { _explicitNullValueBodyMarkdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body_markdown"); else _explicitNullProperties?.Remove("body_markdown"); } }
+        private string? _explicitNullValueBodyMarkdown = default!;
 #nullable restore
 #else
-        public string BodyMarkdown { get; set; }
+        public string BodyMarkdown { get => _explicitNullValueBodyMarkdown; set { _explicitNullValueBodyMarkdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body_markdown"); else _explicitNullProperties?.Remove("body_markdown"); } }
+        private string _explicitNullValueBodyMarkdown = default!;
 #endif
         /// <summary>Identifies the user who created the ad.</summary>
-        public int? CreatorId { get; set; }
+        public int? CreatorId { get => _explicitNullValueCreatorId; set { _explicitNullValueCreatorId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_id"); else _explicitNullProperties?.Remove("creator_id"); } }
+        private int? _explicitNullValueCreatorId = default!;
         /// <summary>Potentially limits visitors to whom the ad is visible</summary>
-        public global::Soenneker.Devto.OpenApiClient.Models.BillboardDisplayTo? DisplayTo { get; set; }
+        public global::Soenneker.Devto.OpenApiClient.Models.BillboardDisplayTo? DisplayTo { get => _explicitNullValueDisplayTo; set { _explicitNullValueDisplayTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_to"); else _explicitNullProperties?.Remove("display_to"); } }
+        private global::Soenneker.Devto.OpenApiClient.Models.BillboardDisplayTo? _explicitNullValueDisplayTo = default!;
         /// <summary>Articles this ad should *not* appear on (blank means no articles are disallowed, and this ad can appear next to any/all articles). Comma-separated list of integer Article IDs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExcludeArticleIds { get; set; }
+        public string? ExcludeArticleIds { get => _explicitNullValueExcludeArticleIds; set { _explicitNullValueExcludeArticleIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_article_ids"); else _explicitNullProperties?.Remove("exclude_article_ids"); } }
+        private string? _explicitNullValueExcludeArticleIds = default!;
 #nullable restore
 #else
-        public string ExcludeArticleIds { get; set; }
+        public string ExcludeArticleIds { get => _explicitNullValueExcludeArticleIds; set { _explicitNullValueExcludeArticleIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_article_ids"); else _explicitNullProperties?.Remove("exclude_article_ids"); } }
+        private string _explicitNullValueExcludeArticleIds = default!;
 #endif
         /// <summary>Timestamp when the billboard expires. After this time, the billboard will automatically be marked as not approved.</summary>
-        public DateTimeOffset? ExpiresAt { get; set; }
+        public DateTimeOffset? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at"); else _explicitNullProperties?.Remove("expires_at"); } }
+        private DateTimeOffset? _explicitNullValueExpiresAt = default!;
         /// <summary>The ID of the Billboard</summary>
-        public int? Id { get; set; }
+        public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private int? _explicitNullValueId = default!;
         /// <summary>For internal use, helps distinguish ads from one another</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Identifies the organization to which the ad belongs</summary>
-        public int? OrganizationId { get; set; }
+        public int? OrganizationId { get => _explicitNullValueOrganizationId; set { _explicitNullValueOrganizationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_id"); else _explicitNullProperties?.Remove("organization_id"); } }
+        private int? _explicitNullValueOrganizationId = default!;
         /// <summary>Identifies which area of site layout the ad can appear in</summary>
-        public global::Soenneker.Devto.OpenApiClient.Models.BillboardPlacementArea? PlacementArea { get; set; }
+        public global::Soenneker.Devto.OpenApiClient.Models.BillboardPlacementArea? PlacementArea { get => _explicitNullValuePlacementArea; set { _explicitNullValuePlacementArea = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("placement_area"); else _explicitNullProperties?.Remove("placement_area"); } }
+        private global::Soenneker.Devto.OpenApiClient.Models.BillboardPlacementArea? _explicitNullValuePlacementArea = default!;
         /// <summary>Ad must be both published and approved to be in rotation</summary>
-        public bool? Published { get; set; }
+        public bool? Published { get => _explicitNullValuePublished; set { _explicitNullValuePublished = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("published"); else _explicitNullProperties?.Remove("published"); } }
+        private bool? _explicitNullValuePublished = default!;
         /// <summary>Tags on which this ad can be displayed (blank is all/any tags)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TagList { get; set; }
+        public string? TagList { get => _explicitNullValueTagList; set { _explicitNullValueTagList = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag_list"); else _explicitNullProperties?.Remove("tag_list"); } }
+        private string? _explicitNullValueTagList = default!;
 #nullable restore
 #else
-        public string TagList { get; set; }
+        public string TagList { get => _explicitNullValueTagList; set { _explicitNullValueTagList = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag_list"); else _explicitNullProperties?.Remove("tag_list"); } }
+        private string _explicitNullValueTagList = default!;
 #endif
         /// <summary>Locations to show this billboard in (blank means it will be shown in all locations). Specified as a comma-separated list or array of ISO 3166-2 country and optionally region codes)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TargetGeolocations { get; set; }
+        public List<string>? TargetGeolocations { get => _explicitNullValueTargetGeolocations; set { _explicitNullValueTargetGeolocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_geolocations"); else _explicitNullProperties?.Remove("target_geolocations"); } }
+        private List<string>? _explicitNullValueTargetGeolocations = default!;
 #nullable restore
 #else
-        public List<string> TargetGeolocations { get; set; }
+        public List<string> TargetGeolocations { get => _explicitNullValueTargetGeolocations; set { _explicitNullValueTargetGeolocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_geolocations"); else _explicitNullProperties?.Remove("target_geolocations"); } }
+        private List<string> _explicitNullValueTargetGeolocations = default!;
 #endif
         /// <summary>Types of the billboards:in_house (created by admins),community (created by an entity, appears on entity&apos;s content),external ( created by an entity, or a non-entity, can appear everywhere)</summary>
-        public global::Soenneker.Devto.OpenApiClient.Models.BillboardTypeOf? TypeOf { get; set; }
+        public global::Soenneker.Devto.OpenApiClient.Models.BillboardTypeOf? TypeOf { get => _explicitNullValueTypeOf; set { _explicitNullValueTypeOf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type_of"); else _explicitNullProperties?.Remove("type_of"); } }
+        private global::Soenneker.Devto.OpenApiClient.Models.BillboardTypeOf? _explicitNullValueTypeOf = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Models.Billboard"/> and sets the default values.
         /// </summary>
@@ -92,7 +136,7 @@ namespace Soenneker.Devto.OpenApiClient.Models
         public static global::Soenneker.Devto.OpenApiClient.Models.Billboard CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Devto.OpenApiClient.Models.Billboard();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Devto.OpenApiClient.Models.Billboard(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -143,6 +187,7 @@ namespace Soenneker.Devto.OpenApiClient.Models
             writer.WriteStringValue("tag_list", TagList);
             writer.WriteCollectionOfPrimitiveValues<string>("target_geolocations", TargetGeolocations);
             writer.WriteEnumValue<global::Soenneker.Devto.OpenApiClient.Models.BillboardTypeOf>("type_of", TypeOf);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

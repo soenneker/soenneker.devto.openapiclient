@@ -55,7 +55,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Concepts.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Devto.OpenApiClient.Models.Concept>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.Concept.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Devto.OpenApiClient.Models.Concept>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.Concept.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update concept metadata such as description, similarity threshold, and custom score.### Parameter Guidelines:- **similarity_threshold**: Cosine distance threshold (range 0.0 to 1.0) determining how closely an article&apos;s embedding must align with the concept&apos;s anchor embedding to be classified under it.
@@ -75,7 +75,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Concepts.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Devto.OpenApiClient.Models.Concept>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.Concept.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Devto.OpenApiClient.Models.Concept>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.Concept.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve details, settings, and popularity metrics of a single concept by ID.### Integration Tip:- Includes the semantic description, similarity thresholds, parent concept mappings, and scores.

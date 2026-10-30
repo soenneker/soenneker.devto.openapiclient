@@ -13,21 +13,40 @@ namespace Soenneker.Devto.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConceptDailyMetric : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("articles_count") is { } nullNodeArticlesCount && nullNodeArticlesCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArticlesCount = null;
+            if (parseNode.GetChildNode("comments_count") is { } nullNodeCommentsCount && nullNodeCommentsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommentsCount = null;
+            if (parseNode.GetChildNode("date") is { } nullNodeDate && nullNodeDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Date = null;
+            if (parseNode.GetChildNode("page_views") is { } nullNodePageViews && nullNodePageViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageViews = null;
+            if (parseNode.GetChildNode("popularity_score") is { } nullNodePopularityScore && nullNodePopularityScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PopularityScore = null;
+            if (parseNode.GetChildNode("reactions_count") is { } nullNodeReactionsCount && nullNodeReactionsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReactionsCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The articles_count property</summary>
-        public int? ArticlesCount { get; set; }
+        public int? ArticlesCount { get => _explicitNullValueArticlesCount; set { _explicitNullValueArticlesCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("articles_count"); else _explicitNullProperties?.Remove("articles_count"); } }
+        private int? _explicitNullValueArticlesCount = default!;
         /// <summary>The comments_count property</summary>
-        public int? CommentsCount { get; set; }
+        public int? CommentsCount { get => _explicitNullValueCommentsCount; set { _explicitNullValueCommentsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comments_count"); else _explicitNullProperties?.Remove("comments_count"); } }
+        private int? _explicitNullValueCommentsCount = default!;
         /// <summary>The date property</summary>
-        public Date? Date { get; set; }
+        public Date? Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
+        private Date? _explicitNullValueDate = default!;
         /// <summary>The page_views property</summary>
-        public int? PageViews { get; set; }
+        public int? PageViews { get => _explicitNullValuePageViews; set { _explicitNullValuePageViews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page_views"); else _explicitNullProperties?.Remove("page_views"); } }
+        private int? _explicitNullValuePageViews = default!;
         /// <summary>The popularity_score property</summary>
-        public float? PopularityScore { get; set; }
+        public float? PopularityScore { get => _explicitNullValuePopularityScore; set { _explicitNullValuePopularityScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("popularity_score"); else _explicitNullProperties?.Remove("popularity_score"); } }
+        private float? _explicitNullValuePopularityScore = default!;
         /// <summary>The reactions_count property</summary>
-        public int? ReactionsCount { get; set; }
+        public int? ReactionsCount { get => _explicitNullValueReactionsCount; set { _explicitNullValueReactionsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reactions_count"); else _explicitNullProperties?.Remove("reactions_count"); } }
+        private int? _explicitNullValueReactionsCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Models.ConceptDailyMetric"/> and sets the default values.
         /// </summary>
@@ -43,7 +62,7 @@ namespace Soenneker.Devto.OpenApiClient.Models
         public static global::Soenneker.Devto.OpenApiClient.Models.ConceptDailyMetric CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Devto.OpenApiClient.Models.ConceptDailyMetric();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Devto.OpenApiClient.Models.ConceptDailyMetric(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,6 +93,7 @@ namespace Soenneker.Devto.OpenApiClient.Models
             writer.WriteIntValue("page_views", PageViews);
             writer.WriteFloatValue("popularity_score", PopularityScore);
             writer.WriteIntValue("reactions_count", ReactionsCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

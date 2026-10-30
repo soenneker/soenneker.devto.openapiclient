@@ -61,7 +61,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Surveys.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Devto.OpenApiClient.Models.SurveyWithPolls>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.SurveyWithPolls.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Devto.OpenApiClient.Models.SurveyWithPolls>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.SurveyWithPolls.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a single survey (by ID or slug) with its nested structure.### Nested Format Details:- Returns the target Survey object including all associated Polls, multiple choice options, and configuration states.- Requires Administrator authorization.

@@ -62,7 +62,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Recommended_articles_lists
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Devto.OpenApiClient.Models.RecommendedArticlesList>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.RecommendedArticlesList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Devto.OpenApiClient.Models.RecommendedArticlesList>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.RecommendedArticlesList.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -83,7 +83,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Recommended_articles_lists
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Devto.OpenApiClient.Models.RecommendedArticlesList>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.RecommendedArticlesList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Devto.OpenApiClient.Models.RecommendedArticlesList>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.RecommendedArticlesList.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of all recommended articles lists configured in the system.### Overview:- Recommended Articles Lists are curated selections of articles pinned or recommended in layout regions (e.g. `main_feed` or `sidebar`).- Supports search by list name and standard query pagination.- Requires Administrator privileges.

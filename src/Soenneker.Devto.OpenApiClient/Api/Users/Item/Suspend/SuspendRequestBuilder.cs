@@ -47,7 +47,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Users.Item.Suspend
         {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Suspend a user&apos;s account.### Suspension Details:- The user associated with the API key must have an `admin` or `moderator` role.- Assigns the `suspended` role to the user, preventing them from posting new content (articles or comments) while suspended.- Existing content is not deleted.- Suspended users are not notified in the UI; if you want them to know, you must notify them explicitly.

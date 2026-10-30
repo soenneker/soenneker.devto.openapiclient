@@ -62,7 +62,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Agent_sessions
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Devto.OpenApiClient.Models.AgentSessionIndex>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.AgentSessionIndex.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Devto.OpenApiClient.Models.AgentSessionIndex>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.AgentSessionIndex.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -83,7 +83,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Agent_sessions
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Devto.OpenApiClient.Models.AgentSessionIndex>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.AgentSessionIndex.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Devto.OpenApiClient.Models.AgentSessionIndex>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.AgentSessionIndex.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of the authenticated user&apos;s agent sessions.### Agent Sessions Overview:- Agent sessions represent coding conversation transcripts uploaded from CLI tools (like Claude Code).- Used by the developer portal to render interactive walkthroughs or session summaries.- Requires authentication.

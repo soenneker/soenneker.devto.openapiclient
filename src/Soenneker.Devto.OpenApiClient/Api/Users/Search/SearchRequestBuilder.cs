@@ -49,7 +49,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Users.Search
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Devto.OpenApiClient.Models.ExtendedUser>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.ExtendedUser.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Devto.OpenApiClient.Models.ExtendedUser>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.ExtendedUser.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Search for a user by email address.### Permissions &amp; Context:- Requires administrative privileges (`api-key` of an administrator).- Used to verify account existence or map email addresses to platform usernames.

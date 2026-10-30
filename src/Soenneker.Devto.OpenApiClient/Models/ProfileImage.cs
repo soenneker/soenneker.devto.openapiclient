@@ -12,40 +12,59 @@ namespace Soenneker.Devto.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProfileImage : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("image_of") is { } nullNodeImageOf && nullNodeImageOf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageOf = null;
+            if (parseNode.GetChildNode("profile_image_90") is { } nullNodeProfileImage90 && nullNodeProfileImage90.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileImage90 = null;
+            if (parseNode.GetChildNode("profile_image") is { } nullNodeProfileImageProp && nullNodeProfileImageProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileImageProp = null;
+            if (parseNode.GetChildNode("type_of") is { } nullNodeTypeOf && nullNodeTypeOf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TypeOf = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Determines the type of the profile image owner (user or organization)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImageOf { get; set; }
+        public string? ImageOf { get => _explicitNullValueImageOf; set { _explicitNullValueImageOf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_of"); else _explicitNullProperties?.Remove("image_of"); } }
+        private string? _explicitNullValueImageOf = default!;
 #nullable restore
 #else
-        public string ImageOf { get; set; }
+        public string ImageOf { get => _explicitNullValueImageOf; set { _explicitNullValueImageOf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_of"); else _explicitNullProperties?.Remove("image_of"); } }
+        private string _explicitNullValueImageOf = default!;
 #endif
         /// <summary>Profile image (90x90)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProfileImage90 { get; set; }
+        public string? ProfileImage90 { get => _explicitNullValueProfileImage90; set { _explicitNullValueProfileImage90 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_image_90"); else _explicitNullProperties?.Remove("profile_image_90"); } }
+        private string? _explicitNullValueProfileImage90 = default!;
 #nullable restore
 #else
-        public string ProfileImage90 { get; set; }
+        public string ProfileImage90 { get => _explicitNullValueProfileImage90; set { _explicitNullValueProfileImage90 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_image_90"); else _explicitNullProperties?.Remove("profile_image_90"); } }
+        private string _explicitNullValueProfileImage90 = default!;
 #endif
         /// <summary>Profile image (640x640)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProfileImageProp { get; set; }
+        public string? ProfileImageProp { get => _explicitNullValueProfileImageProp; set { _explicitNullValueProfileImageProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_image"); else _explicitNullProperties?.Remove("profile_image"); } }
+        private string? _explicitNullValueProfileImageProp = default!;
 #nullable restore
 #else
-        public string ProfileImageProp { get; set; }
+        public string ProfileImageProp { get => _explicitNullValueProfileImageProp; set { _explicitNullValueProfileImageProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profile_image"); else _explicitNullProperties?.Remove("profile_image"); } }
+        private string _explicitNullValueProfileImageProp = default!;
 #endif
         /// <summary>Return profile_image</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TypeOf { get; set; }
+        public string? TypeOf { get => _explicitNullValueTypeOf; set { _explicitNullValueTypeOf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type_of"); else _explicitNullProperties?.Remove("type_of"); } }
+        private string? _explicitNullValueTypeOf = default!;
 #nullable restore
 #else
-        public string TypeOf { get; set; }
+        public string TypeOf { get => _explicitNullValueTypeOf; set { _explicitNullValueTypeOf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type_of"); else _explicitNullProperties?.Remove("type_of"); } }
+        private string _explicitNullValueTypeOf = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Models.ProfileImage"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.Devto.OpenApiClient.Models
         public static global::Soenneker.Devto.OpenApiClient.Models.ProfileImage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Devto.OpenApiClient.Models.ProfileImage();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Devto.OpenApiClient.Models.ProfileImage(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.Devto.OpenApiClient.Models
             writer.WriteStringValue("profile_image_90", ProfileImage90);
             writer.WriteStringValue("profile_image", ProfileImageProp);
             writer.WriteStringValue("type_of", TypeOf);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

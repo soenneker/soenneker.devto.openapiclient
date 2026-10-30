@@ -2,7 +2,7 @@
   "descriptionHash": "281821D647B8C75F5B5C653A6DD046370A12354846F8C57DFB8D8DC5C5491DE6464DD807DD75CBAB2374208E9170CB495F4BE34432820B143B1FDC12EA811923",
   "descriptionLocation": "../../openapi.fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.36.1",
+  "kiotaVersion": "1.37.0",
   "clientClassName": "DevtoOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Devto.OpenApiClient",

@@ -12,55 +12,93 @@ namespace Soenneker.Devto.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Poll : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("poll_options") is { } nullNodePollOptions && nullNodePollOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PollOptions = null;
+            if (parseNode.GetChildNode("poll_options_count") is { } nullNodePollOptionsCount && nullNodePollOptionsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PollOptionsCount = null;
+            if (parseNode.GetChildNode("poll_skips_count") is { } nullNodePollSkipsCount && nullNodePollSkipsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PollSkipsCount = null;
+            if (parseNode.GetChildNode("poll_type_of") is { } nullNodePollTypeOf && nullNodePollTypeOf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PollTypeOf = null;
+            if (parseNode.GetChildNode("poll_votes_count") is { } nullNodePollVotesCount && nullNodePollVotesCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PollVotesCount = null;
+            if (parseNode.GetChildNode("position") is { } nullNodePosition && nullNodePosition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Position = null;
+            if (parseNode.GetChildNode("prompt_html") is { } nullNodePromptHtml && nullNodePromptHtml.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PromptHtml = null;
+            if (parseNode.GetChildNode("prompt_markdown") is { } nullNodePromptMarkdown && nullNodePromptMarkdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PromptMarkdown = null;
+            if (parseNode.GetChildNode("scale_max") is { } nullNodeScaleMax && nullNodeScaleMax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScaleMax = null;
+            if (parseNode.GetChildNode("scale_min") is { } nullNodeScaleMin && nullNodeScaleMin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScaleMin = null;
+            if (parseNode.GetChildNode("type_of") is { } nullNodeTypeOf && nullNodeTypeOf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TypeOf = null;
+            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The id property</summary>
-        public long? Id { get; set; }
+        public long? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private long? _explicitNullValueId = default!;
         /// <summary>The available options for this poll</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Devto.OpenApiClient.Models.PollOption>? PollOptions { get; set; }
+        public List<global::Soenneker.Devto.OpenApiClient.Models.PollOption>? PollOptions { get => _explicitNullValuePollOptions; set { _explicitNullValuePollOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("poll_options"); else _explicitNullProperties?.Remove("poll_options"); } }
+        private List<global::Soenneker.Devto.OpenApiClient.Models.PollOption>? _explicitNullValuePollOptions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Devto.OpenApiClient.Models.PollOption> PollOptions { get; set; }
+        public List<global::Soenneker.Devto.OpenApiClient.Models.PollOption> PollOptions { get => _explicitNullValuePollOptions; set { _explicitNullValuePollOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("poll_options"); else _explicitNullProperties?.Remove("poll_options"); } }
+        private List<global::Soenneker.Devto.OpenApiClient.Models.PollOption> _explicitNullValuePollOptions = default!;
 #endif
         /// <summary>Number of options in this poll</summary>
-        public int? PollOptionsCount { get; set; }
+        public int? PollOptionsCount { get => _explicitNullValuePollOptionsCount; set { _explicitNullValuePollOptionsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("poll_options_count"); else _explicitNullProperties?.Remove("poll_options_count"); } }
+        private int? _explicitNullValuePollOptionsCount = default!;
         /// <summary>Number of users who skipped this poll</summary>
-        public int? PollSkipsCount { get; set; }
+        public int? PollSkipsCount { get => _explicitNullValuePollSkipsCount; set { _explicitNullValuePollSkipsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("poll_skips_count"); else _explicitNullProperties?.Remove("poll_skips_count"); } }
+        private int? _explicitNullValuePollSkipsCount = default!;
         /// <summary>Poll question type: single_choice, multiple_choice, scale, or text_input</summary>
-        public global::Soenneker.Devto.OpenApiClient.Models.PollPollTypeOf? PollTypeOf { get; set; }
+        public global::Soenneker.Devto.OpenApiClient.Models.PollPollTypeOf? PollTypeOf { get => _explicitNullValuePollTypeOf; set { _explicitNullValuePollTypeOf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("poll_type_of"); else _explicitNullProperties?.Remove("poll_type_of"); } }
+        private global::Soenneker.Devto.OpenApiClient.Models.PollPollTypeOf? _explicitNullValuePollTypeOf = default!;
         /// <summary>Total number of votes across all options</summary>
-        public int? PollVotesCount { get; set; }
+        public int? PollVotesCount { get => _explicitNullValuePollVotesCount; set { _explicitNullValuePollVotesCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("poll_votes_count"); else _explicitNullProperties?.Remove("poll_votes_count"); } }
+        private int? _explicitNullValuePollVotesCount = default!;
         /// <summary>Display order within the survey</summary>
-        public int? Position { get; set; }
+        public int? Position { get => _explicitNullValuePosition; set { _explicitNullValuePosition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("position"); else _explicitNullProperties?.Remove("position"); } }
+        private int? _explicitNullValuePosition = default!;
         /// <summary>Question text rendered as HTML</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PromptHtml { get; set; }
+        public string? PromptHtml { get => _explicitNullValuePromptHtml; set { _explicitNullValuePromptHtml = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_html"); else _explicitNullProperties?.Remove("prompt_html"); } }
+        private string? _explicitNullValuePromptHtml = default!;
 #nullable restore
 #else
-        public string PromptHtml { get; set; }
+        public string PromptHtml { get => _explicitNullValuePromptHtml; set { _explicitNullValuePromptHtml = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_html"); else _explicitNullProperties?.Remove("prompt_html"); } }
+        private string _explicitNullValuePromptHtml = default!;
 #endif
         /// <summary>Question text in markdown</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PromptMarkdown { get; set; }
+        public string? PromptMarkdown { get => _explicitNullValuePromptMarkdown; set { _explicitNullValuePromptMarkdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_markdown"); else _explicitNullProperties?.Remove("prompt_markdown"); } }
+        private string? _explicitNullValuePromptMarkdown = default!;
 #nullable restore
 #else
-        public string PromptMarkdown { get; set; }
+        public string PromptMarkdown { get => _explicitNullValuePromptMarkdown; set { _explicitNullValuePromptMarkdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_markdown"); else _explicitNullProperties?.Remove("prompt_markdown"); } }
+        private string _explicitNullValuePromptMarkdown = default!;
 #endif
         /// <summary>Maximum value for scale polls</summary>
-        public int? ScaleMax { get; set; }
+        public int? ScaleMax { get => _explicitNullValueScaleMax; set { _explicitNullValueScaleMax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scale_max"); else _explicitNullProperties?.Remove("scale_max"); } }
+        private int? _explicitNullValueScaleMax = default!;
         /// <summary>Minimum value for scale polls</summary>
-        public int? ScaleMin { get; set; }
+        public int? ScaleMin { get => _explicitNullValueScaleMin; set { _explicitNullValueScaleMin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scale_min"); else _explicitNullProperties?.Remove("scale_min"); } }
+        private int? _explicitNullValueScaleMin = default!;
         /// <summary>Resource discriminator</summary>
-        public global::Soenneker.Devto.OpenApiClient.Models.PollTypeOf? TypeOf { get; set; }
+        public global::Soenneker.Devto.OpenApiClient.Models.PollTypeOf? TypeOf { get => _explicitNullValueTypeOf; set { _explicitNullValueTypeOf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type_of"); else _explicitNullProperties?.Remove("type_of"); } }
+        private global::Soenneker.Devto.OpenApiClient.Models.PollTypeOf? _explicitNullValueTypeOf = default!;
         /// <summary>The updated_at property</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Models.Poll"/> and sets the default values.
         /// </summary>
@@ -76,7 +114,7 @@ namespace Soenneker.Devto.OpenApiClient.Models
         public static global::Soenneker.Devto.OpenApiClient.Models.Poll CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Devto.OpenApiClient.Models.Poll();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Devto.OpenApiClient.Models.Poll(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -123,6 +161,7 @@ namespace Soenneker.Devto.OpenApiClient.Models
             writer.WriteIntValue("scale_min", ScaleMin);
             writer.WriteEnumValue<global::Soenneker.Devto.OpenApiClient.Models.PollTypeOf>("type_of", TypeOf);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

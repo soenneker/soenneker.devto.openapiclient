@@ -47,7 +47,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Users.Item.Unpublish
         {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This endpoint allows the client to unpublish all of the articles and comments created by a user.### Administrative Action:- Requires the authenticated user to be an Administrator.- This is a destructive administrative action that immediately unpublishes all posts/comments from public feeds.- Ideal for handling spam accounts or cleanup operations.

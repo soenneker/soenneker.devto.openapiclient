@@ -47,7 +47,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Articles.Item.Unpublish
         {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This endpoint allows the client to unpublish an article.The user associated with the API key must have any &apos;admin&apos; or &apos;moderator&apos; role.The article will be unpublished and will no longer be visible to the public. It will remainin the database and will set back to draft status on the author&apos;s posts dashboard. Anynotifications associated with the article will be deleted. Any comments on the articlewill remain.

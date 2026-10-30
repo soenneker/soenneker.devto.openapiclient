@@ -49,7 +49,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Reactions.Toggle
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Toggle a reaction on a target resource (Article, Comment, or User) on behalf of the authenticated user.        ### Toggle Logic:        - **First Request**: Creates a new reaction of the specified category on the reactable target.        - **Second Request (with same parameters)**: Deletes the existing reaction.        - Particularly useful for simple, interactive UI buttons like &quot;Like&quot;, &quot;Unicorn&quot;, or &quot;Save&quot; where clicking toggles the active state.

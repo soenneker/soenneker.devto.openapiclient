@@ -51,7 +51,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Admin.Users.Item.Merge
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Merge a duplicate user account into a target main account.### Account Merging Behavior:- Transfers all comments, articles, reactions, and follows to the target user (`merge_user_id`).- Deletes/destroys the source user account once the merge completes successfully.- High risk! Action is permanent and irreversible.- Requires Super Admin credentials.

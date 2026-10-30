@@ -57,7 +57,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Follows
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Devto.OpenApiClient.Models.PostApiFollows200Response>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.PostApiFollows200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Devto.OpenApiClient.Models.PostApiFollows200Response>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.PostApiFollows200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Follow users or organizations in bulk on behalf of the authenticated user.### Bulk Update Behavior:- Accepts arrays of `user_ids` and `organization_ids` in the request body.- Performs follow actions for all provided identifiers.- Highly efficient for onboarding flows or importing social connections.

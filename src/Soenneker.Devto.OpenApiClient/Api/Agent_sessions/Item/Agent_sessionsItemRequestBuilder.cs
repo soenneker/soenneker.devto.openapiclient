@@ -49,7 +49,7 @@ namespace Soenneker.Devto.OpenApiClient.Api.Agent_sessions.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Devto.OpenApiClient.Models.AgentSessionShow>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.AgentSessionShow.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Devto.OpenApiClient.Models.AgentSessionShow>(requestInfo, global::Soenneker.Devto.OpenApiClient.Models.AgentSessionShow.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve details for a single agent session by unique slug or ID.### Integration Tip:- Returns the complete session structure including parsed message logs, token counts, slices, and tool execution metadata.
