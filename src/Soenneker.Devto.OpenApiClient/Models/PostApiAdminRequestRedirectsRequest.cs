@@ -17,7 +17,8 @@ namespace Soenneker.Devto.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("request_redirect") is { } nullNodeRequestRedirect && nullNodeRequestRedirect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestRedirect = null;
+            if (parseNode.GetChildNode("request_redirect") is null) { _explicitNullValueRequestRedirect = default!; _explicitNullProperties?.Remove("request_redirect"); }
+            else if (parseNode.GetChildNode("request_redirect") is { } nullNodeRequestRedirect && nullNodeRequestRedirect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestRedirect = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Devto.OpenApiClient.Models
         /// <summary>The request_redirect property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminRequestRedirectsRequestRequestRedirect? RequestRedirect { get => _explicitNullValueRequestRedirect; set { _explicitNullValueRequestRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_redirect"); else _explicitNullProperties?.Remove("request_redirect"); } }
+        public global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminRequestRedirectsRequestRequestRedirect? RequestRedirect { get => _explicitNullValueRequestRedirect; set { _explicitNullValueRequestRedirect = value; AdditionalData?.Remove("request_redirect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_redirect"); else _explicitNullProperties?.Remove("request_redirect"); } }
         private global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminRequestRedirectsRequestRequestRedirect? _explicitNullValueRequestRedirect = default!;
 #nullable restore
 #else
-        public global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminRequestRedirectsRequestRequestRedirect RequestRedirect { get => _explicitNullValueRequestRedirect; set { _explicitNullValueRequestRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_redirect"); else _explicitNullProperties?.Remove("request_redirect"); } }
+        public global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminRequestRedirectsRequestRequestRedirect RequestRedirect { get => _explicitNullValueRequestRedirect; set { _explicitNullValueRequestRedirect = value; AdditionalData?.Remove("request_redirect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_redirect"); else _explicitNullProperties?.Remove("request_redirect"); } }
         private global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminRequestRedirectsRequestRequestRedirect _explicitNullValueRequestRedirect = default!;
 #endif
         /// <summary>

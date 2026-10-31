@@ -17,13 +17,14 @@ namespace Soenneker.Devto.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("email_newsletter") is { } nullNodeEmailNewsletter && nullNodeEmailNewsletter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailNewsletter = null;
+            if (parseNode.GetChildNode("email_newsletter") is null) { _explicitNullValueEmailNewsletter = default!; _explicitNullProperties?.Remove("email_newsletter"); }
+            else if (parseNode.GetChildNode("email_newsletter") is { } nullNodeEmailNewsletter && nullNodeEmailNewsletter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailNewsletter = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The email_newsletter property</summary>
-        public bool? EmailNewsletter { get => _explicitNullValueEmailNewsletter; set { _explicitNullValueEmailNewsletter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_newsletter"); else _explicitNullProperties?.Remove("email_newsletter"); } }
+        public bool? EmailNewsletter { get => _explicitNullValueEmailNewsletter; set { _explicitNullValueEmailNewsletter = value; AdditionalData?.Remove("email_newsletter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_newsletter"); else _explicitNullProperties?.Remove("email_newsletter"); } }
         private bool? _explicitNullValueEmailNewsletter = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Models.PutApiAdminUsersByIdNotificationSettingsRequestNotificationSetting"/> and sets the default values.

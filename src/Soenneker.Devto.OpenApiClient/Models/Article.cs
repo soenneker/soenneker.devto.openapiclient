@@ -18,7 +18,8 @@ namespace Soenneker.Devto.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("article") is { } nullNodeArticleProp && nullNodeArticleProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArticleProp = null;
+            if (parseNode.GetChildNode("article") is null) { _explicitNullValueArticleProp = default!; _explicitNullProperties?.Remove("article"); }
+            else if (parseNode.GetChildNode("article") is { } nullNodeArticleProp && nullNodeArticleProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArticleProp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Devto.OpenApiClient.Models
         /// <summary>The article property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Devto.OpenApiClient.Models.ArticleArticle? ArticleProp { get => _explicitNullValueArticleProp; set { _explicitNullValueArticleProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("article"); else _explicitNullProperties?.Remove("article"); } }
+        public global::Soenneker.Devto.OpenApiClient.Models.ArticleArticle? ArticleProp { get => _explicitNullValueArticleProp; set { _explicitNullValueArticleProp = value; AdditionalData?.Remove("article"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("article"); else _explicitNullProperties?.Remove("article"); } }
         private global::Soenneker.Devto.OpenApiClient.Models.ArticleArticle? _explicitNullValueArticleProp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Devto.OpenApiClient.Models.ArticleArticle ArticleProp { get => _explicitNullValueArticleProp; set { _explicitNullValueArticleProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("article"); else _explicitNullProperties?.Remove("article"); } }
+        public global::Soenneker.Devto.OpenApiClient.Models.ArticleArticle ArticleProp { get => _explicitNullValueArticleProp; set { _explicitNullValueArticleProp = value; AdditionalData?.Remove("article"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("article"); else _explicitNullProperties?.Remove("article"); } }
         private global::Soenneker.Devto.OpenApiClient.Models.ArticleArticle _explicitNullValueArticleProp = default!;
 #endif
         /// <summary>

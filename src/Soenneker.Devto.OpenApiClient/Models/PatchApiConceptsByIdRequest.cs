@@ -17,7 +17,8 @@ namespace Soenneker.Devto.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("concept") is { } nullNodeConcept && nullNodeConcept.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Concept = null;
+            if (parseNode.GetChildNode("concept") is null) { _explicitNullValueConcept = default!; _explicitNullProperties?.Remove("concept"); }
+            else if (parseNode.GetChildNode("concept") is { } nullNodeConcept && nullNodeConcept.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Concept = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Devto.OpenApiClient.Models
         /// <summary>The concept property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Devto.OpenApiClient.Models.PatchApiConceptsByIdRequestConcept? Concept { get => _explicitNullValueConcept; set { _explicitNullValueConcept = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concept"); else _explicitNullProperties?.Remove("concept"); } }
+        public global::Soenneker.Devto.OpenApiClient.Models.PatchApiConceptsByIdRequestConcept? Concept { get => _explicitNullValueConcept; set { _explicitNullValueConcept = value; AdditionalData?.Remove("concept"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concept"); else _explicitNullProperties?.Remove("concept"); } }
         private global::Soenneker.Devto.OpenApiClient.Models.PatchApiConceptsByIdRequestConcept? _explicitNullValueConcept = default!;
 #nullable restore
 #else
-        public global::Soenneker.Devto.OpenApiClient.Models.PatchApiConceptsByIdRequestConcept Concept { get => _explicitNullValueConcept; set { _explicitNullValueConcept = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concept"); else _explicitNullProperties?.Remove("concept"); } }
+        public global::Soenneker.Devto.OpenApiClient.Models.PatchApiConceptsByIdRequestConcept Concept { get => _explicitNullValueConcept; set { _explicitNullValueConcept = value; AdditionalData?.Remove("concept"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concept"); else _explicitNullProperties?.Remove("concept"); } }
         private global::Soenneker.Devto.OpenApiClient.Models.PatchApiConceptsByIdRequestConcept _explicitNullValueConcept = default!;
 #endif
         /// <summary>

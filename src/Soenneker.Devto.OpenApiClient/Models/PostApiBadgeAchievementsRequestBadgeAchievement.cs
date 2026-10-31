@@ -17,32 +17,36 @@ namespace Soenneker.Devto.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("badge_id") is { } nullNodeBadgeId && nullNodeBadgeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BadgeId = null;
-            if (parseNode.GetChildNode("include_default_description") is { } nullNodeIncludeDefaultDescription && nullNodeIncludeDefaultDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeDefaultDescription = null;
-            if (parseNode.GetChildNode("rewarding_context_message_markdown") is { } nullNodeRewardingContextMessageMarkdown && nullNodeRewardingContextMessageMarkdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RewardingContextMessageMarkdown = null;
-            if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
+            if (parseNode.GetChildNode("badge_id") is null) { _explicitNullValueBadgeId = default!; _explicitNullProperties?.Remove("badge_id"); }
+            else if (parseNode.GetChildNode("badge_id") is { } nullNodeBadgeId && nullNodeBadgeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BadgeId = null;
+            if (parseNode.GetChildNode("include_default_description") is null) { _explicitNullValueIncludeDefaultDescription = default!; _explicitNullProperties?.Remove("include_default_description"); }
+            else if (parseNode.GetChildNode("include_default_description") is { } nullNodeIncludeDefaultDescription && nullNodeIncludeDefaultDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeDefaultDescription = null;
+            if (parseNode.GetChildNode("rewarding_context_message_markdown") is null) { _explicitNullValueRewardingContextMessageMarkdown = default!; _explicitNullProperties?.Remove("rewarding_context_message_markdown"); }
+            else if (parseNode.GetChildNode("rewarding_context_message_markdown") is { } nullNodeRewardingContextMessageMarkdown && nullNodeRewardingContextMessageMarkdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RewardingContextMessageMarkdown = null;
+            if (parseNode.GetChildNode("user_id") is null) { _explicitNullValueUserId = default!; _explicitNullProperties?.Remove("user_id"); }
+            else if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The badge_id property</summary>
-        public int? BadgeId { get => _explicitNullValueBadgeId; set { _explicitNullValueBadgeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("badge_id"); else _explicitNullProperties?.Remove("badge_id"); } }
+        public int? BadgeId { get => _explicitNullValueBadgeId; set { _explicitNullValueBadgeId = value; AdditionalData?.Remove("badge_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("badge_id"); else _explicitNullProperties?.Remove("badge_id"); } }
         private int? _explicitNullValueBadgeId = default!;
         /// <summary>The include_default_description property</summary>
-        public bool? IncludeDefaultDescription { get => _explicitNullValueIncludeDefaultDescription; set { _explicitNullValueIncludeDefaultDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_default_description"); else _explicitNullProperties?.Remove("include_default_description"); } }
+        public bool? IncludeDefaultDescription { get => _explicitNullValueIncludeDefaultDescription; set { _explicitNullValueIncludeDefaultDescription = value; AdditionalData?.Remove("include_default_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_default_description"); else _explicitNullProperties?.Remove("include_default_description"); } }
         private bool? _explicitNullValueIncludeDefaultDescription = default!;
         /// <summary>The rewarding_context_message_markdown property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RewardingContextMessageMarkdown { get => _explicitNullValueRewardingContextMessageMarkdown; set { _explicitNullValueRewardingContextMessageMarkdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rewarding_context_message_markdown"); else _explicitNullProperties?.Remove("rewarding_context_message_markdown"); } }
+        public string? RewardingContextMessageMarkdown { get => _explicitNullValueRewardingContextMessageMarkdown; set { _explicitNullValueRewardingContextMessageMarkdown = value; AdditionalData?.Remove("rewarding_context_message_markdown"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rewarding_context_message_markdown"); else _explicitNullProperties?.Remove("rewarding_context_message_markdown"); } }
         private string? _explicitNullValueRewardingContextMessageMarkdown = default!;
 #nullable restore
 #else
-        public string RewardingContextMessageMarkdown { get => _explicitNullValueRewardingContextMessageMarkdown; set { _explicitNullValueRewardingContextMessageMarkdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rewarding_context_message_markdown"); else _explicitNullProperties?.Remove("rewarding_context_message_markdown"); } }
+        public string RewardingContextMessageMarkdown { get => _explicitNullValueRewardingContextMessageMarkdown; set { _explicitNullValueRewardingContextMessageMarkdown = value; AdditionalData?.Remove("rewarding_context_message_markdown"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rewarding_context_message_markdown"); else _explicitNullProperties?.Remove("rewarding_context_message_markdown"); } }
         private string _explicitNullValueRewardingContextMessageMarkdown = default!;
 #endif
         /// <summary>The user_id property</summary>
-        public int? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        public int? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; AdditionalData?.Remove("user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
         private int? _explicitNullValueUserId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Models.PostApiBadgeAchievementsRequestBadgeAchievement"/> and sets the default values.

@@ -17,7 +17,8 @@ namespace Soenneker.Devto.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("feedback_message") is { } nullNodeFeedbackMessage && nullNodeFeedbackMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeedbackMessage = null;
+            if (parseNode.GetChildNode("feedback_message") is null) { _explicitNullValueFeedbackMessage = default!; _explicitNullProperties?.Remove("feedback_message"); }
+            else if (parseNode.GetChildNode("feedback_message") is { } nullNodeFeedbackMessage && nullNodeFeedbackMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeedbackMessage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Devto.OpenApiClient.Models
         /// <summary>The feedback_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Devto.OpenApiClient.Models.PatchApiFeedbackMessagesByIdRequestFeedbackMessage? FeedbackMessage { get => _explicitNullValueFeedbackMessage; set { _explicitNullValueFeedbackMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback_message"); else _explicitNullProperties?.Remove("feedback_message"); } }
+        public global::Soenneker.Devto.OpenApiClient.Models.PatchApiFeedbackMessagesByIdRequestFeedbackMessage? FeedbackMessage { get => _explicitNullValueFeedbackMessage; set { _explicitNullValueFeedbackMessage = value; AdditionalData?.Remove("feedback_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback_message"); else _explicitNullProperties?.Remove("feedback_message"); } }
         private global::Soenneker.Devto.OpenApiClient.Models.PatchApiFeedbackMessagesByIdRequestFeedbackMessage? _explicitNullValueFeedbackMessage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Devto.OpenApiClient.Models.PatchApiFeedbackMessagesByIdRequestFeedbackMessage FeedbackMessage { get => _explicitNullValueFeedbackMessage; set { _explicitNullValueFeedbackMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback_message"); else _explicitNullProperties?.Remove("feedback_message"); } }
+        public global::Soenneker.Devto.OpenApiClient.Models.PatchApiFeedbackMessagesByIdRequestFeedbackMessage FeedbackMessage { get => _explicitNullValueFeedbackMessage; set { _explicitNullValueFeedbackMessage = value; AdditionalData?.Remove("feedback_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedback_message"); else _explicitNullProperties?.Remove("feedback_message"); } }
         private global::Soenneker.Devto.OpenApiClient.Models.PatchApiFeedbackMessagesByIdRequestFeedbackMessage _explicitNullValueFeedbackMessage = default!;
 #endif
         /// <summary>

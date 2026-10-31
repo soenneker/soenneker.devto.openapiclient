@@ -17,13 +17,14 @@ namespace Soenneker.Devto.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("merge_user_id") is { } nullNodeMergeUserId && nullNodeMergeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MergeUserId = null;
+            if (parseNode.GetChildNode("merge_user_id") is null) { _explicitNullValueMergeUserId = default!; _explicitNullProperties?.Remove("merge_user_id"); }
+            else if (parseNode.GetChildNode("merge_user_id") is { } nullNodeMergeUserId && nullNodeMergeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MergeUserId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The merge_user_id property</summary>
-        public int? MergeUserId { get => _explicitNullValueMergeUserId; set { _explicitNullValueMergeUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merge_user_id"); else _explicitNullProperties?.Remove("merge_user_id"); } }
+        public int? MergeUserId { get => _explicitNullValueMergeUserId; set { _explicitNullValueMergeUserId = value; AdditionalData?.Remove("merge_user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merge_user_id"); else _explicitNullProperties?.Remove("merge_user_id"); } }
         private int? _explicitNullValueMergeUserId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Models.PostApiAdminUsersByIdMergeRequest"/> and sets the default values.

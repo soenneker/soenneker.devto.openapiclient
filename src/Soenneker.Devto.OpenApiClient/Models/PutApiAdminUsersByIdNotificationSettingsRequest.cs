@@ -17,7 +17,8 @@ namespace Soenneker.Devto.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("notification_setting") is { } nullNodeNotificationSetting && nullNodeNotificationSetting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationSetting = null;
+            if (parseNode.GetChildNode("notification_setting") is null) { _explicitNullValueNotificationSetting = default!; _explicitNullProperties?.Remove("notification_setting"); }
+            else if (parseNode.GetChildNode("notification_setting") is { } nullNodeNotificationSetting && nullNodeNotificationSetting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationSetting = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Devto.OpenApiClient.Models
         /// <summary>The notification_setting property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Devto.OpenApiClient.Models.PutApiAdminUsersByIdNotificationSettingsRequestNotificationSetting? NotificationSetting { get => _explicitNullValueNotificationSetting; set { _explicitNullValueNotificationSetting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification_setting"); else _explicitNullProperties?.Remove("notification_setting"); } }
+        public global::Soenneker.Devto.OpenApiClient.Models.PutApiAdminUsersByIdNotificationSettingsRequestNotificationSetting? NotificationSetting { get => _explicitNullValueNotificationSetting; set { _explicitNullValueNotificationSetting = value; AdditionalData?.Remove("notification_setting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification_setting"); else _explicitNullProperties?.Remove("notification_setting"); } }
         private global::Soenneker.Devto.OpenApiClient.Models.PutApiAdminUsersByIdNotificationSettingsRequestNotificationSetting? _explicitNullValueNotificationSetting = default!;
 #nullable restore
 #else
-        public global::Soenneker.Devto.OpenApiClient.Models.PutApiAdminUsersByIdNotificationSettingsRequestNotificationSetting NotificationSetting { get => _explicitNullValueNotificationSetting; set { _explicitNullValueNotificationSetting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification_setting"); else _explicitNullProperties?.Remove("notification_setting"); } }
+        public global::Soenneker.Devto.OpenApiClient.Models.PutApiAdminUsersByIdNotificationSettingsRequestNotificationSetting NotificationSetting { get => _explicitNullValueNotificationSetting; set { _explicitNullValueNotificationSetting = value; AdditionalData?.Remove("notification_setting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification_setting"); else _explicitNullProperties?.Remove("notification_setting"); } }
         private global::Soenneker.Devto.OpenApiClient.Models.PutApiAdminUsersByIdNotificationSettingsRequestNotificationSetting _explicitNullValueNotificationSetting = default!;
 #endif
         /// <summary>

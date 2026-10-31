@@ -17,10 +17,14 @@ namespace Soenneker.Devto.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("curated_data") is { } nullNodeCuratedData && nullNodeCuratedData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CuratedData = null;
-            if (parseNode.GetChildNode("s3_key") is { } nullNodeS3Key && nullNodeS3Key.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S3Key = null;
-            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
-            if (parseNode.GetChildNode("tool_name") is { } nullNodeToolName && nullNodeToolName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolName = null;
+            if (parseNode.GetChildNode("curated_data") is null) { _explicitNullValueCuratedData = default!; _explicitNullProperties?.Remove("curated_data"); }
+            else if (parseNode.GetChildNode("curated_data") is { } nullNodeCuratedData && nullNodeCuratedData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CuratedData = null;
+            if (parseNode.GetChildNode("s3_key") is null) { _explicitNullValueS3Key = default!; _explicitNullProperties?.Remove("s3_key"); }
+            else if (parseNode.GetChildNode("s3_key") is { } nullNodeS3Key && nullNodeS3Key.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S3Key = null;
+            if (parseNode.GetChildNode("title") is null) { _explicitNullValueTitle = default!; _explicitNullProperties?.Remove("title"); }
+            else if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("tool_name") is null) { _explicitNullValueToolName = default!; _explicitNullProperties?.Remove("tool_name"); }
+            else if (parseNode.GetChildNode("tool_name") is { } nullNodeToolName && nullNodeToolName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,35 +32,35 @@ namespace Soenneker.Devto.OpenApiClient.Models
         /// <summary>JSON string of curated session data with messages array and metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CuratedData { get => _explicitNullValueCuratedData; set { _explicitNullValueCuratedData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("curated_data"); else _explicitNullProperties?.Remove("curated_data"); } }
+        public string? CuratedData { get => _explicitNullValueCuratedData; set { _explicitNullValueCuratedData = value; AdditionalData?.Remove("curated_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("curated_data"); else _explicitNullProperties?.Remove("curated_data"); } }
         private string? _explicitNullValueCuratedData = default!;
 #nullable restore
 #else
-        public string CuratedData { get => _explicitNullValueCuratedData; set { _explicitNullValueCuratedData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("curated_data"); else _explicitNullProperties?.Remove("curated_data"); } }
+        public string CuratedData { get => _explicitNullValueCuratedData; set { _explicitNullValueCuratedData = value; AdditionalData?.Remove("curated_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("curated_data"); else _explicitNullProperties?.Remove("curated_data"); } }
         private string _explicitNullValueCuratedData = default!;
 #endif
         /// <summary>S3 object key from presign endpoint (optional).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? S3Key { get => _explicitNullValueS3Key; set { _explicitNullValueS3Key = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("s3_key"); else _explicitNullProperties?.Remove("s3_key"); } }
+        public string? S3Key { get => _explicitNullValueS3Key; set { _explicitNullValueS3Key = value; AdditionalData?.Remove("s3_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("s3_key"); else _explicitNullProperties?.Remove("s3_key"); } }
         private string? _explicitNullValueS3Key = default!;
 #nullable restore
 #else
-        public string S3Key { get => _explicitNullValueS3Key; set { _explicitNullValueS3Key = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("s3_key"); else _explicitNullProperties?.Remove("s3_key"); } }
+        public string S3Key { get => _explicitNullValueS3Key; set { _explicitNullValueS3Key = value; AdditionalData?.Remove("s3_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("s3_key"); else _explicitNullProperties?.Remove("s3_key"); } }
         private string _explicitNullValueS3Key = default!;
 #endif
         /// <summary>Title for the session (auto-generated if omitted)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
         private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
         private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>Tool that produced the session (e.g. claude_code, codex).</summary>
-        public global::Soenneker.Devto.OpenApiClient.Models.CreateAgentSessionRequestToolName? ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
+        public global::Soenneker.Devto.OpenApiClient.Models.CreateAgentSessionRequestToolName? ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; AdditionalData?.Remove("tool_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
         private global::Soenneker.Devto.OpenApiClient.Models.CreateAgentSessionRequestToolName? _explicitNullValueToolName = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Devto.OpenApiClient.Models.CreateAgentSessionRequest"/> and sets the default values.
@@ -86,7 +90,7 @@ namespace Soenneker.Devto.OpenApiClient.Models
                 { "curated_data", n => { CuratedData = n.GetStringValue(); } },
                 { "s3_key", n => { S3Key = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "tool_name", n => { ToolName = n.GetEnumValue<global::Soenneker.Devto.OpenApiClient.Models.CreateAgentSessionRequestToolName>(); } },
+                { "tool_name", n => { var parsed = n.GetEnumValue<global::Soenneker.Devto.OpenApiClient.Models.CreateAgentSessionRequestToolName>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueToolName = default; _explicitNullProperties?.Remove("tool_name"); AdditionalData["tool_name"] = unknown; } else { ToolName = parsed; AdditionalData.Remove("tool_name"); } } },
             };
         }
         /// <summary>

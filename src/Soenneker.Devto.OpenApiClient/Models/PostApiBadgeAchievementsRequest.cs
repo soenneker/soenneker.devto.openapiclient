@@ -17,7 +17,8 @@ namespace Soenneker.Devto.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("badge_achievement") is { } nullNodeBadgeAchievement && nullNodeBadgeAchievement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BadgeAchievement = null;
+            if (parseNode.GetChildNode("badge_achievement") is null) { _explicitNullValueBadgeAchievement = default!; _explicitNullProperties?.Remove("badge_achievement"); }
+            else if (parseNode.GetChildNode("badge_achievement") is { } nullNodeBadgeAchievement && nullNodeBadgeAchievement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BadgeAchievement = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Devto.OpenApiClient.Models
         /// <summary>The badge_achievement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Devto.OpenApiClient.Models.PostApiBadgeAchievementsRequestBadgeAchievement? BadgeAchievement { get => _explicitNullValueBadgeAchievement; set { _explicitNullValueBadgeAchievement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("badge_achievement"); else _explicitNullProperties?.Remove("badge_achievement"); } }
+        public global::Soenneker.Devto.OpenApiClient.Models.PostApiBadgeAchievementsRequestBadgeAchievement? BadgeAchievement { get => _explicitNullValueBadgeAchievement; set { _explicitNullValueBadgeAchievement = value; AdditionalData?.Remove("badge_achievement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("badge_achievement"); else _explicitNullProperties?.Remove("badge_achievement"); } }
         private global::Soenneker.Devto.OpenApiClient.Models.PostApiBadgeAchievementsRequestBadgeAchievement? _explicitNullValueBadgeAchievement = default!;
 #nullable restore
 #else
-        public global::Soenneker.Devto.OpenApiClient.Models.PostApiBadgeAchievementsRequestBadgeAchievement BadgeAchievement { get => _explicitNullValueBadgeAchievement; set { _explicitNullValueBadgeAchievement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("badge_achievement"); else _explicitNullProperties?.Remove("badge_achievement"); } }
+        public global::Soenneker.Devto.OpenApiClient.Models.PostApiBadgeAchievementsRequestBadgeAchievement BadgeAchievement { get => _explicitNullValueBadgeAchievement; set { _explicitNullValueBadgeAchievement = value; AdditionalData?.Remove("badge_achievement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("badge_achievement"); else _explicitNullProperties?.Remove("badge_achievement"); } }
         private global::Soenneker.Devto.OpenApiClient.Models.PostApiBadgeAchievementsRequestBadgeAchievement _explicitNullValueBadgeAchievement = default!;
 #endif
         /// <summary>

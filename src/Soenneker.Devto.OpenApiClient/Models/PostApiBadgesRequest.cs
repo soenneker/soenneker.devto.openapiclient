@@ -17,7 +17,8 @@ namespace Soenneker.Devto.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("badge") is { } nullNodeBadge && nullNodeBadge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Badge = null;
+            if (parseNode.GetChildNode("badge") is null) { _explicitNullValueBadge = default!; _explicitNullProperties?.Remove("badge"); }
+            else if (parseNode.GetChildNode("badge") is { } nullNodeBadge && nullNodeBadge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Badge = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Devto.OpenApiClient.Models
         /// <summary>The badge property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Devto.OpenApiClient.Models.PostApiBadgesRequestBadge? Badge { get => _explicitNullValueBadge; set { _explicitNullValueBadge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("badge"); else _explicitNullProperties?.Remove("badge"); } }
+        public global::Soenneker.Devto.OpenApiClient.Models.PostApiBadgesRequestBadge? Badge { get => _explicitNullValueBadge; set { _explicitNullValueBadge = value; AdditionalData?.Remove("badge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("badge"); else _explicitNullProperties?.Remove("badge"); } }
         private global::Soenneker.Devto.OpenApiClient.Models.PostApiBadgesRequestBadge? _explicitNullValueBadge = default!;
 #nullable restore
 #else
-        public global::Soenneker.Devto.OpenApiClient.Models.PostApiBadgesRequestBadge Badge { get => _explicitNullValueBadge; set { _explicitNullValueBadge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("badge"); else _explicitNullProperties?.Remove("badge"); } }
+        public global::Soenneker.Devto.OpenApiClient.Models.PostApiBadgesRequestBadge Badge { get => _explicitNullValueBadge; set { _explicitNullValueBadge = value; AdditionalData?.Remove("badge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("badge"); else _explicitNullProperties?.Remove("badge"); } }
         private global::Soenneker.Devto.OpenApiClient.Models.PostApiBadgesRequestBadge _explicitNullValueBadge = default!;
 #endif
         /// <summary>
