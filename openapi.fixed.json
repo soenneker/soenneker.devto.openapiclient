@@ -69,6 +69,17 @@
           },
           "422": {
             "description": "unprocessable"
+          },
+          "200": {
+            "description": "created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentSessionIndex"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -1269,6 +1280,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BadgeAchievement"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -1388,6 +1410,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Badge"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -1547,6 +1580,17 @@
           },
           "422": {
             "description": "unprocessable"
+          },
+          "200": {
+            "description": "A billboard",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostApiBillboards201ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -2020,6 +2064,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Concept"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -3138,6 +3193,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecommendedArticlesList"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -3284,6 +3350,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestRedirect"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
