@@ -4744,15 +4744,15 @@
           },
           "cover_image": {
             "type": "string",
-            "format": "url",
-            "nullable": true
+            "nullable": true,
+            "x-client-original-format": "url"
           },
           "readable_publish_date": {
             "type": "string"
           },
           "social_image": {
             "type": "string",
-            "format": "url"
+            "x-client-original-format": "url"
           },
           "tag_list": {
             "type": "array",
@@ -4768,15 +4768,15 @@
           },
           "path": {
             "type": "string",
-            "format": "path"
+            "x-client-original-format": "path"
           },
           "url": {
             "type": "string",
-            "format": "url"
+            "x-client-original-format": "url"
           },
           "canonical_url": {
             "type": "string",
-            "format": "url"
+            "x-client-original-format": "url"
           },
           "positive_reactions_count": {
             "type": "integer",
@@ -5031,7 +5031,7 @@
           },
           "path": {
             "type": "string",
-            "format": "path"
+            "x-client-original-format": "path"
           },
           "title": {
             "type": "string"
@@ -5039,7 +5039,7 @@
           "image_url": {
             "type": "string",
             "description": "Podcast episode image url or podcast image url",
-            "format": "url"
+            "x-client-original-format": "url"
           },
           "podcast": {
             "$ref": "#/components/schemas/SharedPodcast"
@@ -5088,8 +5088,8 @@
           },
           "website_url": {
             "type": "string",
-            "format": "url",
-            "nullable": true
+            "nullable": true,
+            "x-client-original-format": "url"
           },
           "profile_image": {
             "type": "string",
@@ -5117,12 +5117,12 @@
           "profile_image": {
             "type": "string",
             "description": "Profile image (640x640)",
-            "format": "url"
+            "x-client-original-format": "url"
           },
           "profile_image_90": {
             "type": "string",
             "description": "Profile image (90x90)",
-            "format": "url"
+            "x-client-original-format": "url"
           }
         },
         "description": "The organization the resource belongs to"
@@ -5295,7 +5295,7 @@
           "image_url": {
             "type": "string",
             "description": "Podcast image url",
-            "format": "url"
+            "x-client-original-format": "url"
           }
         },
         "description": "The podcast that the resource belongs to"
@@ -5316,7 +5316,7 @@
           "image_url": {
             "type": "string",
             "description": "Podcast image url",
-            "format": "url"
+            "x-client-original-format": "url"
           }
         },
         "description": "A Comment on an Article or Podcast Episode"
@@ -5486,7 +5486,7 @@
           },
           "url": {
             "type": "string",
-            "format": "url"
+            "x-client-original-format": "url"
           }
         },
         "description": "Representation of an agent session returned in a list or after creation"
@@ -5561,7 +5561,7 @@
           },
           "url": {
             "type": "string",
-            "format": "url"
+            "x-client-original-format": "url"
           }
         },
         "description": "Full representation of an agent session including messages and curation data"
@@ -5849,7 +5849,7 @@
           },
           "user_email": {
             "type": "string",
-            "format": "email"
+            "x-client-original-format": "email"
           },
           "session_start": {
             "type": "integer",
@@ -5892,7 +5892,7 @@
           },
           "user_email": {
             "type": "string",
-            "format": "email"
+            "x-client-original-format": "email"
           },
           "text_content": {
             "type": "string"
@@ -5957,8 +5957,8 @@
           },
           "cover_image": {
             "type": "string",
-            "format": "url",
-            "nullable": true
+            "nullable": true,
+            "x-client-original-format": "url"
           },
           "first_observed_at": {
             "type": "string",
@@ -6278,21 +6278,6 @@
         },
         "description": "Representation of a subforem"
       },
-      "SurveyWithPollsAllOf2": {
-        "required": [
-          "polls"
-        ],
-        "type": "object",
-        "properties": {
-          "polls": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Poll"
-            },
-            "description": "All polls in the survey, ordered by position"
-          }
-        }
-      },
       "VideoArticleUser": {
         "type": "object",
         "properties": {
@@ -6339,21 +6324,6 @@
           }
         }
       },
-      "PageSocialImage": {
-        "type": "object",
-        "nullable": true
-      },
-      "AgentSessionShowMetadata": {
-        "type": "object",
-        "description": "Session metadata (tool-specific)",
-        "nullable": true
-      },
-      "AgentSessionShowMessagesItem": {
-        "type": "object"
-      },
-      "AgentSessionShowSlicesItem": {
-        "type": "object"
-      },
       "ConceptTopArticlesItem": {
         "type": "object",
         "properties": {
@@ -6386,12 +6356,6 @@
         },
         "nullable": true
       },
-      "GetAgentSessions200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/AgentSessionIndex"
-        }
-      },
       "CreateAgentSessionRequest": {
         "required": [
           "curated_data"
@@ -6415,96 +6379,12 @@
           }
         }
       },
-      "GetArticles200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ArticleIndex"
-        }
-      },
-      "SearchArticles200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ArticleIndex"
-        }
-      },
-      "GetLatestArticles200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ArticleIndex"
-        }
-      },
-      "GetArticleById200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ArticleIndex"
-        }
-      },
-      "GetArticleByPath200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ArticleIndex"
-        }
-      },
-      "GetUserArticles200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ArticleIndex"
-        }
-      },
-      "GetUserPublishedArticles200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ArticleIndex"
-        }
-      },
-      "GetUserUnpublishedArticles200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ArticleIndex"
-        }
-      },
-      "GetUserAllArticles200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ArticleIndex"
-        }
-      },
-      "GetSegments200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Segment"
-        }
-      },
-      "GetSegment200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Segment"
-        }
-      },
-      "GetUsersInSegment200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/User"
-        }
-      },
-      "GetApiBadgeAchievements200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/BadgeAchievement"
-        }
-      },
       "PostApiBadgeAchievementsRequest": {
         "type": "object",
         "properties": {
           "badge_achievement": {
             "$ref": "#/components/schemas/PostApiBadgeAchievementsRequestBadgeAchievement"
           }
-        }
-      },
-      "GetApiBadges200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Badge"
         }
       },
       "PostApiBadgesRequest": {
@@ -6523,66 +6403,12 @@
           }
         }
       },
-      "GetApiBillboards200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Billboard"
-        }
-      },
-      "PostApiBillboardsRequest": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Billboard"
-        }
-      },
-      "PostApiBillboards201Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Billboard"
-        }
-      },
-      "PutApiBillboardsByIdRequest": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Billboard"
-        }
-      },
-      "PutApiBillboardsById200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Billboard"
-        }
-      },
-      "GetCommentsByArticleId200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Comment"
-        }
-      },
-      "GetApiConcepts200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Concept"
-        }
-      },
       "PatchApiConceptsByIdRequest": {
         "type": "object",
         "properties": {
           "concept": {
             "$ref": "#/components/schemas/PatchApiConceptsByIdRequestConcept"
           }
-        }
-      },
-      "GetApiConceptsByIdArticles200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ArticleIndex"
-        }
-      },
-      "GetApiAdminConcepts200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Concept"
         }
       },
       "PostApiAdminConceptsRequest": {
@@ -6618,18 +6444,6 @@
           "feedback_message": {
             "$ref": "#/components/schemas/PatchApiFeedbackMessagesByIdRequestFeedbackMessage"
           }
-        }
-      },
-      "GetFollowedTags200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/FollowedTag"
-        }
-      },
-      "GetFollowers200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/GetFollowers200ResponseItem"
         }
       },
       "PostApiFollowsRequest": {
@@ -6673,30 +6487,6 @@
           }
         ]
       },
-      "GetOrgUsers200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/User"
-        }
-      },
-      "GetOrgArticles200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ArticleIndex"
-        }
-      },
-      "GetOrganizations200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Organization"
-        }
-      },
-      "GetApiPages200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Page"
-        }
-      },
       "PostApiPagesRequest": {
         "type": "object",
         "properties": {
@@ -6727,30 +6517,6 @@
           "template": {
             "$ref": "#/components/schemas/PostApiPagesRequestTemplate"
           }
-        }
-      },
-      "GetPodcastEpisodes200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/PodcastEpisodeIndex"
-        }
-      },
-      "GetProfileImage200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ProfileImage"
-        }
-      },
-      "GetReadinglist200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ArticleIndex"
-        }
-      },
-      "GetApiRecommendedArticlesLists200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/RecommendedArticlesList"
         }
       },
       "PostApiRecommendedArticlesListsRequest": {
@@ -6805,12 +6571,6 @@
           }
         }
       },
-      "GetApiAdminRequestRedirects200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/RequestRedirect"
-        }
-      },
       "PostApiAdminRequestRedirectsRequest": {
         "type": "object",
         "properties": {
@@ -6825,66 +6585,6 @@
           "request_redirect": {
             "$ref": "#/components/schemas/PatchApiAdminRequestRedirectsByIdRequestRequestRedirect"
           }
-        }
-      },
-      "GetApiSubforems200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Subforem"
-        }
-      },
-      "GetSurveys200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Survey"
-        }
-      },
-      "GetSurveyPollVotes200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/PollVote"
-        }
-      },
-      "GetSurveyPollTextResponses200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/PollTextResponse"
-        }
-      },
-      "GetTags200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Tag"
-        }
-      },
-      "GetTrends200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Trend"
-        }
-      },
-      "GetTrend200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Trend"
-        }
-      },
-      "GetTrendArticles200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ArticleIndex"
-        }
-      },
-      "GetUserMe200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/MyUser"
-        }
-      },
-      "GetUser200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ExtendedUser"
         }
       },
       "PatchApiAdminUsersByIdRequest": {
@@ -7003,16 +6703,6 @@
             }
           }
         }
-      },
-      "Videos200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/VideoArticle"
-        }
-      },
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
       },
       "GetAgentSessions200ResponseSchema": {
         "type": "array",
@@ -7437,37 +7127,6 @@
             "type": "string"
           }
         }
-      },
-      "GetFollowers200ResponseItem": {
-        "type": "object",
-        "properties": {
-          "type_of": {
-            "type": "string",
-            "description": "user_follower by default"
-          },
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "user_id": {
-            "type": "integer",
-            "description": "The follower\u0027s user id",
-            "format": "int32"
-          },
-          "name": {
-            "type": "string",
-            "description": "The follower\u0027s name"
-          },
-          "path": {
-            "type": "string",
-            "description": "A path to the follower\u0027s profile"
-          },
-          "profile_image": {
-            "type": "string",
-            "description": "Profile image (640x640)"
-          }
-        },
-        "description": "A follower"
       },
       "PostApiAdminRequestRedirectsRequestRequestRedirect": {
         "required": [
@@ -8281,5 +7940,348 @@
     {
       "api-key": []
     }
-  ]
+  ],
+  "x-client-unused-schemas": {
+    "SurveyWithPollsAllOf2": {
+      "required": [
+        "polls"
+      ],
+      "type": "object",
+      "properties": {
+        "polls": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Poll"
+          },
+          "description": "All polls in the survey, ordered by position"
+        }
+      }
+    },
+    "PageSocialImage": {
+      "type": "object",
+      "nullable": true
+    },
+    "AgentSessionShowMetadata": {
+      "type": "object",
+      "description": "Session metadata (tool-specific)",
+      "nullable": true
+    },
+    "AgentSessionShowMessagesItem": {
+      "type": "object"
+    },
+    "AgentSessionShowSlicesItem": {
+      "type": "object"
+    },
+    "GetAgentSessions200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AgentSessionIndex"
+      }
+    },
+    "GetArticles200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ArticleIndex"
+      }
+    },
+    "SearchArticles200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ArticleIndex"
+      }
+    },
+    "GetLatestArticles200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ArticleIndex"
+      }
+    },
+    "GetArticleById200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ArticleIndex"
+      }
+    },
+    "GetArticleByPath200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ArticleIndex"
+      }
+    },
+    "GetUserArticles200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ArticleIndex"
+      }
+    },
+    "GetUserPublishedArticles200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ArticleIndex"
+      }
+    },
+    "GetUserUnpublishedArticles200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ArticleIndex"
+      }
+    },
+    "GetUserAllArticles200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ArticleIndex"
+      }
+    },
+    "GetSegments200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Segment"
+      }
+    },
+    "GetSegment200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Segment"
+      }
+    },
+    "GetUsersInSegment200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/User"
+      }
+    },
+    "GetApiBadgeAchievements200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BadgeAchievement"
+      }
+    },
+    "GetApiBadges200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Badge"
+      }
+    },
+    "GetApiBillboards200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Billboard"
+      }
+    },
+    "PostApiBillboardsRequest": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Billboard"
+      }
+    },
+    "PostApiBillboards201Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Billboard"
+      }
+    },
+    "PutApiBillboardsByIdRequest": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Billboard"
+      }
+    },
+    "PutApiBillboardsById200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Billboard"
+      }
+    },
+    "GetCommentsByArticleId200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Comment"
+      }
+    },
+    "GetApiConcepts200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Concept"
+      }
+    },
+    "GetApiConceptsByIdArticles200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ArticleIndex"
+      }
+    },
+    "GetApiAdminConcepts200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Concept"
+      }
+    },
+    "GetFollowedTags200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/FollowedTag"
+      }
+    },
+    "GetFollowers200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/GetFollowers200ResponseItem"
+      }
+    },
+    "GetOrgUsers200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/User"
+      }
+    },
+    "GetOrgArticles200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ArticleIndex"
+      }
+    },
+    "GetOrganizations200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Organization"
+      }
+    },
+    "GetApiPages200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Page"
+      }
+    },
+    "GetPodcastEpisodes200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PodcastEpisodeIndex"
+      }
+    },
+    "GetProfileImage200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ProfileImage"
+      }
+    },
+    "GetReadinglist200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ArticleIndex"
+      }
+    },
+    "GetApiRecommendedArticlesLists200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RecommendedArticlesList"
+      }
+    },
+    "GetApiAdminRequestRedirects200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RequestRedirect"
+      }
+    },
+    "GetApiSubforems200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Subforem"
+      }
+    },
+    "GetSurveys200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Survey"
+      }
+    },
+    "GetSurveyPollVotes200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PollVote"
+      }
+    },
+    "GetSurveyPollTextResponses200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PollTextResponse"
+      }
+    },
+    "GetTags200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Tag"
+      }
+    },
+    "GetTrends200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Trend"
+      }
+    },
+    "GetTrend200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Trend"
+      }
+    },
+    "GetTrendArticles200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ArticleIndex"
+      }
+    },
+    "GetUserMe200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/MyUser"
+      }
+    },
+    "GetUser200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ExtendedUser"
+      }
+    },
+    "Videos200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/VideoArticle"
+      }
+    },
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
+    },
+    "GetFollowers200ResponseItem": {
+      "type": "object",
+      "properties": {
+        "type_of": {
+          "type": "string",
+          "description": "user_follower by default"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "user_id": {
+          "type": "integer",
+          "description": "The follower\u0027s user id",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string",
+          "description": "The follower\u0027s name"
+        },
+        "path": {
+          "type": "string",
+          "description": "A path to the follower\u0027s profile"
+        },
+        "profile_image": {
+          "type": "string",
+          "description": "Profile image (640x640)"
+        }
+      },
+      "description": "A follower"
+    }
+  }
 }
