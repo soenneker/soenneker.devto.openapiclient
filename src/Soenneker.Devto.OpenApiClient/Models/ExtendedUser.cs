@@ -194,7 +194,7 @@ namespace Soenneker.Devto.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(13)
             {
                 { "badge_ids", n => { BadgeIds = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
